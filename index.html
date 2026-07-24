@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="es-PE">
+<html lang="es-PE" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Draco's Sur América — Máquinas para fabricar ladrillos ecológicos</title>
-  <meta name="description" content="Prensas hidráulicas para fabricar ladrillos ecológicos: líneas Súper Económica y Premium, de 200 a 2.000 ladrillos por hora. Tecnología para una obra termoacústica, limpia, rápida y económica. Solicita tu cotización por WhatsApp." />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Draco's Sur América" />
-  <meta property="og:locale" content="es_PE" />
-  <meta property="og:title" content="Draco's Sur América — Máquinas para fabricar ladrillos ecológicos" />
-  <meta property="og:description" content="Prensas hidráulicas para fabricar ladrillos ecológicos, de 200 a 2.000 ladrillos por hora. Tecnología e innovación para la construcción civil." />
-  <meta property="og:image" content="images/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <title>Máquinas para Fabricar Ladrillos Ecológicos | Draco's Sur América</title>
+  <meta name="description" content="Prensas hidráulicas para fabricar ladrillos ecológicos de 200 a 2.000 por hora. Fabricación propia, garantía de 1 año, capacitación y soporte en Perú y Brasil. Cotiza por WhatsApp." />
   <link rel="icon" type="image/png" href="images/logo.png" />
-  <link rel="apple-touch-icon" href="images/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -28,19 +17,24 @@
       theme: {
         extend: {
           colors: {
-            graphite: { DEFAULT: '#1a1a1f', deep: '#0c0c10', soft: '#26262e', line: '#36363f' },
-            brand: { gold: '#c9a24b', goldlt: '#e2c274', golddk: '#a17c2c', red: '#b21f2b', reddark: '#8f1721', steel: '#4a76a8' },
-            mist: '#f1f1f3',
-            sand: '#f7f5f0',
+            graphite: '#211B10',
+            deep: '#171105',
+            gold: '#C9A24B',
+            goldlt: '#E8CE8C',
+            golddk: '#A67F2E',
+            cream: '#F6EFDD',
+            mist: '#F9F6EF',
+            sand: '#EFE6D0',
+            brandred: '#A81C28',
           },
           fontFamily: {
             display: ['Archivo', 'system-ui', 'sans-serif'],
-            sans: ['Archivo', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
           },
           boxShadow: {
-            card: '0 1px 2px rgba(12,12,16,0.06), 0 10px 30px -12px rgba(12,12,16,0.28)',
-            float: '0 18px 50px -16px rgba(8,8,12,0.55), 0 4px 12px rgba(8,8,12,0.22)',
-            nav: '0 6px 24px -8px rgba(8,8,12,0.45)',
+            card: '0 6px 24px -8px rgba(33,27,16,0.16)',
+            float: '0 18px 50px -12px rgba(33,27,16,0.30)',
+            nav: '0 2px 18px rgba(33,27,16,0.10)',
           },
         },
       },
@@ -48,133 +42,105 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Archivo', system-ui, sans-serif; line-height: 1.7; color: #24242b; }
-    h1, h2, h3, h4, .font-display { font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; }
-    .heading-tight { letter-spacing: -0.03em; line-height: 1.07; }
-    .eyebrow { letter-spacing: 0.16em; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Archivo', system-ui, sans-serif; }
+    .heading-tight { letter-spacing: -0.025em; line-height: 1.08; }
+    .eyebrow { letter-spacing: 0.22em; }
 
-    .bg-deep {
-      background-image:
-        radial-gradient(1100px 520px at 12% -8%, rgba(201,162,75,0.16), transparent 60%),
-        radial-gradient(820px 560px at 92% 4%, rgba(178,31,43,0.20), transparent 55%),
-        radial-gradient(700px 500px at 70% 100%, rgba(74,118,168,0.16), transparent 60%),
-        linear-gradient(180deg, #1a1a1f 0%, #0c0c10 100%);
+    .bg-deep-grad {
+      background:
+        radial-gradient(1100px 500px at 85% -10%, rgba(201,162,75,0.16), transparent 60%),
+        radial-gradient(800px 420px at -10% 110%, rgba(168,28,40,0.12), transparent 55%),
+        linear-gradient(160deg, #241C0E 0%, #171105 62%, #14100a 100%);
     }
     .grain::after {
-      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.05;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+      background-image: radial-gradient(rgba(255,255,255,0.028) 1px, transparent 1px);
+      background-size: 3px 3px;
     }
-    .ease-spring { transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1); }
 
-    .btn-wa {
-      background: linear-gradient(180deg, #2bb24c 0%, #1f9d41 100%);
-      transition-property: transform, box-shadow, filter; transition-duration: 220ms;
-      box-shadow: 0 10px 26px -10px rgba(31,157,65,0.6);
-    }
-    .btn-wa:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 34px -12px rgba(31,157,65,0.7); }
-    .btn-wa:active { transform: translateY(0); }
-    .btn-wa:focus-visible { outline: 3px solid rgba(43,178,76,0.5); outline-offset: 3px; }
+    .accent-bar { width: 60px; height: 4px; border-radius: 999px;
+      background: linear-gradient(90deg, #A67F2E, #E8CE8C 55%, #C9A24B); }
 
-    .btn-gold {
-      background: linear-gradient(180deg, #d4ad57 0%, #b98f34 100%); color:#26210f;
-      transition-property: transform, box-shadow, filter; transition-duration: 220ms;
-      box-shadow: 0 10px 26px -12px rgba(161,124,44,0.6);
-    }
-    .btn-gold:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 34px -12px rgba(161,124,44,0.7); }
-    .btn-gold:active { transform: translateY(0); }
-    .btn-gold:focus-visible { outline: 3px solid rgba(201,162,75,0.5); outline-offset: 3px; }
+    .btn-wa { background: linear-gradient(140deg, #2BDB70, #128C4B 90%);
+      box-shadow: 0 12px 30px -8px rgba(18,140,75,0.55); transition: transform .25s cubic-bezier(.34,1.4,.64,1), box-shadow .25s; }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -8px rgba(18,140,75,0.65); }
 
-    .btn-red { background: #b21f2b; transition-property: transform, box-shadow, background-color; transition-duration: 220ms; }
-    .btn-red:hover { background:#c62636; transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(178,31,43,0.6); }
-    .btn-red:active { transform: translateY(0); }
-    .btn-red:focus-visible { outline: 3px solid rgba(178,31,43,0.45); outline-offset: 3px; }
+    .btn-gold { background: linear-gradient(140deg, #E8CE8C, #C9A24B 55%, #A67F2E);
+      box-shadow: 0 12px 30px -10px rgba(166,127,46,0.6); transition: transform .25s cubic-bezier(.34,1.4,.64,1), box-shadow .25s; }
+    .btn-gold:hover { transform: translateY(-2px); }
 
-    .btn-ghost { transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.10); transform: translateY(-2px); }
-    .btn-ghost:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 3px; }
+    .btn-ghost { transition: background .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.09); }
 
-    .cta-bar { background: linear-gradient(180deg,#2bb24c 0%,#1f9d41 100%); transition: filter 200ms ease; }
-    .cta-bar:hover { filter: brightness(1.08); }
-    .cta-bar:active { filter: brightness(0.96); }
-    .cta-bar:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
-
-    .link-nav { transition: color 180ms ease; }
-    .link-nav:hover { color:#fff; }
-    .link-nav:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 4px; border-radius:4px; }
-
-    .card-lift { transition-property: transform, box-shadow, border-color; transition-duration: 280ms; }
+    .card-lift { transition: transform .28s, box-shadow .28s; }
     .card-lift:hover { transform: translateY(-5px); }
 
-    .accent-bar { width: 58px; height: 4px; background:#c9a24b; border-radius:999px; }
-    .ring-soft { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
-
-    .edge { position: relative; background: #17171d; }
-    .edge::before {
-      content:""; position:absolute; inset:0; border-radius: inherit; padding:1px;
-      background: linear-gradient(160deg, rgba(201,162,75,0.55), rgba(255,255,255,0.02) 42%, rgba(178,31,43,0.30));
+    .gold-edge { position: relative; }
+    .gold-edge::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+      background: linear-gradient(160deg, rgba(232,206,140,0.65), rgba(201,162,75,0.12) 42%, rgba(168,28,40,0.28));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none;
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
     }
 
-    .reveal { opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); }
-    .reveal.in { opacity:1; transform:none; }
+    .link-nav { transition: color .18s; }
+    .link-nav:hover { color: #E8CE8C; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity:1; transform:none; transition:none; }
-      html { scroll-behavior:auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
     }
 
-    .wa-badge { background: linear-gradient(180deg, #2bb24c 0%, #1f9d41 100%); }
-    .spec-row:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .slide { transition: opacity .8s ease; }
   </style>
 </head>
 
-<body class="bg-white antialiased">
+<body class="bg-white text-graphite antialiased">
 
   <!-- ====================== NAV ====================== -->
   <header class="sticky top-0 z-50 shadow-nav">
-    <!-- Top bar -->
-    <div class="bg-graphite-deep">
+    <div class="bg-deep">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex h-20 lg:h-28 items-center justify-between gap-4">
+        <div class="flex h-20 lg:h-24 items-center justify-between gap-4">
           <a href="#topo" class="group flex items-center gap-3.5 shrink-0">
-            <img src="images/logo.png" alt="Draco's Sur América" class="h-14 w-14 lg:h-20 lg:w-20 object-contain transition-transform duration-300 ease-spring group-hover:scale-[1.04]" />
+            <img src="images/logo.png" alt="Draco's Sur América" class="h-14 w-14 lg:h-[4.25rem] lg:w-[4.25rem] object-contain drop-shadow-[0_2px_10px_rgba(232,206,140,0.25)] transition-transform duration-300 group-hover:scale-[1.04]" />
             <span class="leading-none">
-              <span class="block text-white font-display text-xl lg:text-2xl font-extrabold tracking-tight">DRACO'S <span class="text-brand-gold">Sur América</span></span>
-              <span class="mt-1.5 hidden sm:block text-[10px] lg:text-[11px] font-semibold uppercase eyebrow text-white/45">Tecnología para la construcción</span>
+              <span class="block font-display text-xl lg:text-2xl font-extrabold tracking-tight text-white">DRACO'S <span class="text-gold">Sur América</span></span>
+              <span class="mt-1.5 hidden sm:block text-[10px] font-semibold uppercase eyebrow text-white/45">Máquinas para ladrillos ecológicos</span>
             </span>
           </a>
 
-          <div class="flex items-center gap-4">
-            <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20fabricar%20ladrillos.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener" class="group flex items-center gap-3">
-              <span class="wa-badge inline-flex h-10 w-10 lg:h-11 lg:w-11 items-center justify-center rounded-full text-white shadow-card transition-transform duration-300 ease-spring group-hover:scale-105">
-                <svg class="h-5 w-5 lg:h-6 lg:w-6" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-              </span>
-              <span class="hidden sm:block leading-tight">
-                <span class="block text-sm font-bold text-white">WhatsApp Perú</span>
-                <span class="block text-xs text-white/50">+51 979 736 684</span>
-              </span>
-            </a>
-          </div>
+          <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20cotizar%20una%20m%C3%A1quina%20para%20fabricar%20ladrillos.%20%C2%BFMe%20pueden%20asesorar%3F" target="_blank" rel="noopener" class="group flex items-center gap-3">
+            <span class="btn-wa inline-flex h-10 w-10 lg:h-11 lg:w-11 items-center justify-center rounded-full text-white">
+              <svg class="h-5 w-5 lg:h-6 lg:w-6" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
+            </span>
+            <span class="hidden sm:block leading-tight">
+              <span class="block text-sm font-bold text-white">WhatsApp</span>
+              <span class="block text-xs text-white/55">Cotización inmediata</span>
+            </span>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Bottom bar -->
-    <div class="bg-graphite">
+    <div class="bg-graphite/95 backdrop-blur border-t border-white/5">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="flex h-12 items-stretch justify-between">
-          <nav class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-wide text-white/70">
+          <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold uppercase tracking-wide text-white/70">
             <a href="#maquinas" class="link-nav">Máquinas</a>
+            <a href="#modelos" class="link-nav">Modelos</a>
             <a href="#como-funciona" class="link-nav">Cómo funciona</a>
             <a href="#nosotros" class="link-nav">Nosotros</a>
-            <a href="#modelos" class="link-nav">Modelos</a>
+            <a href="#ladrillos" class="link-nav">Ladrillos</a>
             <a href="#contacto" class="link-nav">Contacto</a>
           </nav>
           <span class="lg:hidden flex items-center text-xs font-medium uppercase tracking-wide text-white/55">Máquinas para ladrillos ecológicos</span>
 
           <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20solicitar%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20fabricar%20ladrillos." target="_blank" rel="noopener"
-             class="cta-bar -mr-5 lg:-mr-8 flex items-center gap-2 px-5 lg:px-8 text-sm font-bold uppercase tracking-wide text-white">
+             class="btn-wa -mr-5 lg:-mr-8 flex items-center gap-2 px-5 lg:px-8 text-sm font-bold uppercase tracking-wide text-white !rounded-none !shadow-none">
             <svg class="h-4 w-4" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
             Solicitar cotización
           </a>
@@ -184,361 +150,488 @@
   </header>
 
   <!-- ====================== HERO ====================== -->
-  <section id="topo" class="bg-deep grain relative overflow-hidden">
-    <div class="relative mx-auto max-w-7xl px-5 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-24">
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+  <section id="topo" class="bg-deep-grad grain relative overflow-hidden">
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-8 pt-14 lg:pt-20 pb-16 lg:pb-24">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-6 text-white reveal">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/15 px-4 py-1.5 text-[11px] eyebrow font-semibold uppercase">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span> Tecnología para ladrillos ecológicos
+          <span class="inline-flex items-center gap-2 rounded-full bg-gold/10 ring-1 ring-gold/30 px-4 py-1.5 text-[11px] eyebrow font-semibold uppercase text-goldlt">
+            <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Fabricante oficial · Perú y Brasil
           </span>
-          <h1 class="heading-tight mt-6 text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white">
-            Máquinas para fabricar <span class="text-brand-gold">ladrillos ecológicos</span>
+          <h1 class="heading-tight mt-6 font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-white">
+            Máquinas para fabricar <span class="text-gold">ladrillos ecológicos</span> de 200 a 2.000 por hora
           </h1>
           <p class="mt-6 max-w-xl text-lg text-white/75">
-            Prensas hidráulicas de fabricación propia, de <strong class="text-white">200 a 2.000 ladrillos por hora</strong>. Tecnología e innovación para una obra <strong class="text-white">termoacústica, limpia, rápida y económica</strong>.
+            Prensas hidráulicas de fabricación propia, con <strong class="text-white">garantía de 1 año, capacitación incluida y soporte técnico real</strong>. Produce tu propio ladrillo, baja tus costos de obra y abre una nueva fuente de ingresos.
           </p>
 
           <div class="mt-9 flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20fabricar%20ladrillos.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener"
+            <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20cotizar%20una%20m%C3%A1quina%20para%20fabricar%20ladrillos.%20%C2%BFMe%20pueden%20asesorar%3F" target="_blank" rel="noopener"
                class="btn-wa inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 text-base font-semibold text-white">
               <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-              Solicitar cotización
+              Cotizar por WhatsApp
             </a>
             <a href="#maquinas" class="btn-ghost inline-flex items-center justify-center rounded-xl px-7 py-4 text-base font-semibold text-white ring-1 ring-white/25">
               Ver las máquinas
             </a>
           </div>
 
-          <div class="mt-9 grid grid-cols-3 gap-4 max-w-lg">
-            <div>
-              <p class="font-display text-2xl lg:text-3xl font-extrabold text-brand-gold">6</p>
-              <p class="text-xs text-white/60 mt-0.5">modelos de prensa</p>
-            </div>
-            <div>
-              <p class="font-display text-2xl lg:text-3xl font-extrabold text-brand-gold">2.000</p>
-              <p class="text-xs text-white/60 mt-0.5">ladrillos/hora (tope)</p>
-            </div>
-            <div>
-              <p class="font-display text-2xl lg:text-3xl font-extrabold text-brand-gold">1 año</p>
-              <p class="text-xs text-white/60 mt-0.5">de garantía</p>
-            </div>
-          </div>
+          <p class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
+            <span class="flex items-center gap-1.5"><span class="text-gold">★</span> 5,0 en Google (13 reseñas)</span>
+            <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Asesoría inicial gratuita</span>
+            <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Respuesta rápida</span>
+          </p>
         </div>
 
         <div class="lg:col-span-6 reveal">
           <div class="relative mx-auto max-w-xl">
-            <div class="absolute -inset-6 rounded-[2.5rem] bg-brand-gold/10 blur-3xl"></div>
-            <div class="absolute -inset-2 rounded-[2rem] bg-brand-red/10 blur-2xl"></div>
-            <img src="images/premium-vi.png" alt="Prensa hidráulica Premium VI para fabricar ladrillos ecológicos" class="relative w-full object-contain drop-shadow-2xl" />
-            <div class="absolute -bottom-2 left-4 right-4 rounded-xl bg-graphite-soft/90 backdrop-blur px-5 py-3 text-white shadow-float ring-1 ring-white/10 flex items-center justify-between">
-              <div>
-                <p class="font-display text-sm font-bold leading-tight">Línea Premium · máxima producción</p>
-                <p class="text-xs text-white/60">Prensado hidráulico semiautomático</p>
-              </div>
-              <span class="rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-semibold text-brand-goldlt ring-1 ring-brand-gold/30 whitespace-nowrap">Premium VI</span>
+            <div class="absolute -inset-4 rounded-[2rem] bg-gold/15 blur-2xl"></div>
+            <div id="hero-carousel" class="gold-edge relative rounded-2xl overflow-hidden shadow-float aspect-[4/3] bg-graphite">
+              <figure data-slide class="slide absolute inset-0 opacity-100">
+                <img src="images/fabrica-real.jpeg" alt="Equipo de Draco's Sur América mostrando modelos de ladrillos ecológicos" class="h-full w-full object-cover" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent px-5 pt-14 pb-4 text-sm font-semibold text-white">Equipo Draco's · fabricación propia</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0 bg-cream">
+                <img src="images/premium-vi.png" alt="Prensa hidráulica Premium VI" class="h-full w-full object-contain p-6" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-14 pb-4 text-sm font-semibold text-white">Premium VI · hasta 2.000 ladrillos/hora</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/ladrillos-lego.jpg" alt="Ladrillos ecológicos prensados tipo Lego" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent px-5 pt-14 pb-4 text-sm font-semibold text-white">Ladrillos ecológicos prensados tipo Lego</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0 bg-cream">
+                <img src="images/super-economica-iii.png" alt="Prensa Súper Económica III" class="h-full w-full object-contain p-6" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-14 pb-4 text-sm font-semibold text-white">Súper Económica III · línea de inicio</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/casa-lego.jpg" alt="Casa construida con ladrillos ecológicos" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent px-5 pt-14 pb-4 text-sm font-semibold text-white">Obras reales con ladrillos ecológicos</figcaption>
+              </figure>
+              <div data-dots class="absolute bottom-4 right-4 z-10 flex gap-1.5"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="relative h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
-  </section>
 
-  <!-- ====================== ¿PARA QUIÉN ES? ====================== -->
-  <section id="para-quien" class="bg-mist">
-    <div class="mx-auto max-w-5xl px-5 lg:px-8 py-20 lg:py-28">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">¿Para quién es?</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Fabricar tus propios ladrillos es más accesible de lo que crees.</h2>
-        <div class="accent-bar mx-auto mt-5"></div>
-        <p class="mt-7 text-gray-600">
-          El ladrillo ecológico prensado se produce <strong class="text-graphite">en frío, sin horno ni quema</strong>: solo tierra, un poco de cemento y agua. Con una prensa Draco's inicias una producción propia — para tu obra o como negocio — con una inversión que se paga rápido.
-        </p>
-      </div>
-
-      <div class="mt-12 grid sm:grid-cols-2 gap-4 reveal">
-        <div class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-card">
-          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5"/></svg></span>
-          <p class="text-gray-700"><strong class="text-graphite">Constructoras y maestros de obra</strong> que quieren producir su propio material y bajar el costo por m².</p>
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center reveal">
+        <div>
+          <p class="font-display text-3xl lg:text-4xl font-extrabold text-gold">6</p>
+          <p class="mt-1 text-sm text-white/60">modelos de prensa</p>
         </div>
-        <div class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-card">
-          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></span>
-          <p class="text-gray-700"><strong class="text-graphite">Emprendedores</strong> que buscan montar una fábrica de ladrillos con demanda garantizada en su región.</p>
+        <div>
+          <p class="font-display text-3xl lg:text-4xl font-extrabold text-gold">2.000</p>
+          <p class="mt-1 text-sm text-white/60">ladrillos/hora (tope)</p>
         </div>
-        <div class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-card">
-          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/><path d="M9 11h.01M15 11h.01"/></svg></span>
-          <p class="text-gray-700"><strong class="text-graphite">Municipalidades y proyectos sociales</strong> de vivienda que necesitan volumen a bajo costo.</p>
+        <div>
+          <p class="font-display text-3xl lg:text-4xl font-extrabold text-gold">1 año</p>
+          <p class="mt-1 text-sm text-white/60">de garantía</p>
         </div>
-        <div class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-card">
-          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
-          <p class="text-gray-700"><strong class="text-graphite">Minería</strong> que quiere dar valor a sus <strong class="text-graphite">relaves</strong> mediante economía circular, convirtiéndolos en ladrillos.</p>
-        </div>
-      </div>
-
-      <div class="mt-10 text-center reveal">
-        <p class="text-graphite font-medium mb-5">¿Te identificas con alguno? <strong>Probablemente ya hay un modelo para ti.</strong></p>
-        <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20saber%20qu%C3%A9%20m%C3%A1quina%20para%20ladrillos%20se%20ajusta%20a%20mi%20proyecto." target="_blank" rel="noopener"
-           class="btn-wa inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
-          <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-          Quiero asesoría para mi proyecto
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== BANDA DE VALOR ====================== -->
-  <section class="bg-graphite-deep grain relative overflow-hidden">
-    <div class="relative mx-auto max-w-6xl px-5 lg:px-8 py-16 lg:py-20">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <span class="inline-flex items-center gap-2 rounded-full bg-brand-gold/15 ring-1 ring-brand-gold/30 px-4 py-1.5 text-[11px] eyebrow font-semibold uppercase text-white">
-          El ladrillo ecológico
-        </span>
-        <h2 class="heading-tight mt-5 text-3xl lg:text-4xl font-bold text-white">Una obra termoacústica, limpia, rápida y económica.</h2>
-      </div>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 text-center">
-          <div class="mx-auto mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldlt"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg></div>
-          <p class="font-display font-bold text-white">Termoacústico</p>
-          <p class="mt-1.5 text-sm text-white/60">Mejor aislamiento térmico y sonoro que el ladrillo tradicional.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 text-center">
-          <div class="mx-auto mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldlt"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><path d="M9 9c1.5-2 4.5-2 6 0"/></svg></div>
-          <p class="font-display font-bold text-white">Sin quema</p>
-          <p class="mt-1.5 text-sm text-white/60">Prensado en frío: sin hornos, sin humo, sin leña. Producción limpia.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 text-center">
-          <div class="mx-auto mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldlt"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
-          <p class="font-display font-bold text-white">Construcción rápida</p>
-          <p class="mt-1.5 text-sm text-white/60">Piezas modulares y encastrables que aceleran el levantado de muros.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 text-center">
-          <div class="mx-auto mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldlt"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.2 1.1-2 2.5-2s2.5.8 2.5 2-1.1 1.7-2.5 2-2.5.8-2.5 2 1.1 2 2.5 2 2.5-.8 2.5-2"/></svg></div>
-          <p class="font-display font-bold text-white">Más económico</p>
-          <p class="mt-1.5 text-sm text-white/60">Materia prima local y ahorro de mortero: menor costo por metro cuadrado.</p>
+        <div>
+          <p class="font-display text-3xl lg:text-4xl font-extrabold text-gold">5,0 ★</p>
+          <p class="mt-1 text-sm text-white/60">en reseñas de Google</p>
         </div>
       </div>
     </div>
+    <div class="relative h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
   </section>
 
   <!-- ====================== LAS MÁQUINAS ====================== -->
-  <section id="maquinas" class="relative bg-white overflow-hidden">
-    <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-28">
+  <section id="maquinas" class="bg-mist">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-28">
       <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Las máquinas · guía rápida</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Dos líneas para cada etapa de tu producción</h2>
+        <p class="eyebrow text-xs font-semibold uppercase text-brandred">Las máquinas</p>
+        <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold">Elige tu prensa: dos líneas, seis modelos.</h2>
         <div class="accent-bar mx-auto mt-5"></div>
-        <p class="mt-6 text-gray-600">¿No sabes cuál elegir? Es exactamente lo que definimos juntos en la asesoría inicial, según tu producción y tu presupuesto.</p>
+        <p class="mt-6 text-gray-600">¿No sabes cuál te conviene? Escríbenos por WhatsApp: te asesoramos gratis según tu producción y tu presupuesto, <strong class="text-graphite">sin compromiso</strong>.</p>
       </div>
 
-      <!-- LÍNEA SUPER ECONÓMICA -->
+      <!-- Línea Súper Económica -->
+      <div class="mt-14 reveal">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h3 class="font-display text-2xl font-extrabold">Línea Súper Económica</h3>
+            <p class="mt-1 text-gray-600">Carga manual y prensado hidráulico. La puerta de entrada para <strong class="text-graphite">producir tu propio ladrillo con baja inversión</strong>.</p>
+          </div>
+          <span class="rounded-full bg-gold/15 ring-1 ring-gold/40 px-4 py-1.5 text-sm font-bold text-golddk">200 – 350 ladrillos/hora</span>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col">
+            <div class="bg-cream p-5 flex items-center justify-center h-60">
+              <img src="images/super-economica-i.png" alt="Prensa hidráulica Súper Económica I" class="max-h-52 object-contain" loading="lazy" />
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="font-display text-xl font-extrabold">Súper Económica I</h4>
+                <span class="rounded-full bg-graphite/5 px-3 py-1 text-xs font-semibold text-graphite/70">Entrada</span>
+              </div>
+              <p class="mt-3 text-sm text-gray-600 flex-1">Empieza a producir con la prensa más accesible de la línea. Ideal para autoconstrucción y primeros emprendimientos.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Prensado hidráulico</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Carga manual · fácil operación</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Garantía de 1 año</li>
+              </ul>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20I." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
+            </div>
+          </article>
+
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col">
+            <div class="bg-cream p-5 flex items-center justify-center h-60">
+              <img src="images/super-economica-ii.png" alt="Prensa hidráulica Súper Económica II" class="max-h-52 object-contain" loading="lazy" />
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="font-display text-xl font-extrabold">Súper Económica II</h4>
+                <span class="rounded-full bg-graphite/5 px-3 py-1 text-xs font-semibold text-graphite/70">Crecimiento</span>
+              </div>
+              <p class="mt-3 text-sm text-gray-600 flex-1">Más capacidad para atender obras y pedidos constantes sin dar el salto a la línea industrial.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Prensado hidráulico reforzado</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Mayor ritmo de producción</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Garantía de 1 año</li>
+              </ul>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20II." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
+            </div>
+          </article>
+
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col">
+            <div class="bg-cream p-5 flex items-center justify-center h-60">
+              <img src="images/super-economica-iii.png" alt="Prensa hidráulica Súper Económica III" class="max-h-52 object-contain" loading="lazy" />
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="font-display text-xl font-extrabold">Súper Económica III</h4>
+                <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-golddk">Más vendida</span>
+              </div>
+              <p class="mt-3 text-sm text-gray-600 flex-1">El tope de la línea económica: máximo rendimiento por sol invertido para producción continua.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Prensado hidráulico de alto ciclo</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Hasta 350 ladrillos/hora</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Garantía de 1 año</li>
+              </ul>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20III." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Línea Premium -->
       <div class="mt-16 reveal">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div class="flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h3 class="font-display text-2xl font-extrabold text-graphite">Línea Súper Económica</h3>
-            <p class="mt-1 text-gray-600">Carga manual y prensado hidráulico. Ideal para <strong class="text-graphite">iniciar</strong> una producción propia con baja inversión.</p>
+            <h3 class="font-display text-2xl font-extrabold">Línea Premium</h3>
+            <p class="mt-1 text-gray-600">Carga automática y secuencias semiautomáticas. Para <strong class="text-graphite">ladrilleras y producción industrial</strong>.</p>
           </div>
-          <span class="self-start sm:self-auto rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-semibold text-brand-golddk ring-1 ring-brand-gold/30">200 – 350 ladrillos/hora</span>
+          <span class="rounded-full bg-gold/15 ring-1 ring-gold/40 px-4 py-1.5 text-sm font-bold text-golddk">Hasta 2.000 ladrillos/hora</span>
         </div>
 
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <!-- SE I -->
-          <article class="card-lift rounded-2xl border border-gray-100 bg-white shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col">
-            <div class="bg-mist/70 p-5 flex items-center justify-center h-60">
-              <img src="images/super-economica-i.png" alt="Prensa Súper Económica I" class="max-h-52 object-contain" loading="lazy" />
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col">
+            <div class="bg-cream p-5 flex items-center justify-center h-60">
+              <img src="images/premium-ii.png" alt="Prensa hidráulica Premium II" class="max-h-52 object-contain" loading="lazy" />
             </div>
             <div class="p-7 flex flex-col flex-1">
               <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold text-graphite">Súper Económica I</h4>
-                <span class="rounded-full bg-graphite/5 px-2.5 py-1 text-xs font-semibold text-graphite/70">Entrada</span>
+                <h4 class="font-display text-xl font-extrabold">Premium II</h4>
+                <span class="rounded-full bg-graphite/5 px-3 py-1 text-xs font-semibold text-graphite/70">Semi-industrial</span>
               </div>
-              <p class="mt-1 text-sm text-gray-400">Prensa hidráulica manual</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-gray-600 flex-1">
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> <span><strong class="text-graphite">200 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> 5 matrices intercambiables (4 modelos)</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Prensado hasta 5 tn a 1.600 psi</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Motor 5 HP · 220 v monofásico</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> 180 kg · accionada por palancas</li>
+              <p class="mt-3 text-sm text-gray-600 flex-1">Tu primer paso a la producción industrial: automatización con inversión controlada.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Carga automática</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Matrices intercambiables</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Garantía de 1 año</li>
               </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20I." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Súper Económica I</a>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20II." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
             </div>
           </article>
-          <!-- SE II -->
-          <article class="card-lift rounded-2xl border border-gray-100 bg-white shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col">
-            <div class="bg-mist/70 p-5 flex items-center justify-center h-60">
-              <img src="images/super-economica-ii.png" alt="Prensa Súper Económica II" class="max-h-52 object-contain" loading="lazy" />
+
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col">
+            <div class="bg-cream p-5 flex items-center justify-center h-60">
+              <img src="images/premium-iv.png" alt="Prensa hidráulica Premium IV" class="max-h-52 object-contain" loading="lazy" />
             </div>
             <div class="p-7 flex flex-col flex-1">
               <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold text-graphite">Súper Económica II</h4>
-                <span class="rounded-full bg-graphite/5 px-2.5 py-1 text-xs font-semibold text-graphite/70">Intermedia</span>
+                <h4 class="font-display text-xl font-extrabold">Premium IV</h4>
+                <span class="rounded-full bg-graphite/5 px-3 py-1 text-xs font-semibold text-graphite/70">Industrial</span>
               </div>
-              <p class="mt-1 text-sm text-gray-400">Prensa hidráulica manual</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-gray-600 flex-1">
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> <span><strong class="text-graphite">250 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Compactación de 6 tn · 130–150 bar</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Motor 5 HP · 220 v monofásico</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Cambio de matriz en 25 min</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> 350 kg · compresor de aire incluido</li>
+              <p class="mt-3 text-sm text-gray-600 flex-1">Equilibrio entre volumen y costo operativo para ladrilleras en expansión y constructoras.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Carga automática de alto ciclo</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Matrices intercambiables</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Garantía de 1 año</li>
               </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20II." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Súper Económica II</a>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20IV." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
             </div>
           </article>
-          <!-- SE III -->
-          <article class="card-lift rounded-2xl border-2 border-brand-gold/40 bg-white shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col">
-            <div class="bg-mist/70 p-5 flex items-center justify-center h-60 relative">
-              <span class="absolute top-3 left-3 rounded-full bg-brand-gold px-2.5 py-1 text-xs font-semibold text-graphite-deep shadow-card">Más vendida de la línea</span>
-              <img src="images/super-economica-iii.png" alt="Prensa Súper Económica III" class="max-h-52 object-contain" loading="lazy" />
+
+          <article class="card-lift rounded-2xl bg-white shadow-card hover:shadow-float overflow-hidden flex flex-col ring-2 ring-gold/50">
+            <div class="bg-cream p-5 flex items-center justify-center h-60 relative">
+              <span class="absolute top-4 left-4 rounded-full bg-brandred px-3 py-1 text-xs font-bold text-white shadow-card">Máxima producción</span>
+              <img src="images/premium-vi.png" alt="Prensa hidráulica Premium VI" class="max-h-52 object-contain" loading="lazy" />
             </div>
             <div class="p-7 flex flex-col flex-1">
               <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold text-graphite">Súper Económica III</h4>
-                <span class="rounded-full bg-brand-gold/15 px-2.5 py-1 text-xs font-semibold text-brand-golddk">Tope de línea</span>
+                <h4 class="font-display text-xl font-extrabold">Premium VI</h4>
+                <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-golddk">Tope de línea</span>
               </div>
-              <p class="mt-1 text-sm text-gray-400">Prensa hidráulica trifásica</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-gray-600 flex-1">
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> <span><strong class="text-graphite">350 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Compactación de 15 tn · 100–160 bar</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Motor 7,5 HP · trifásico 380/440 v</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> Ajuste de bloque de 100 a 30 mm</li>
-                <li class="flex gap-2"><span class="text-brand-gold font-bold">›</span> 600 kg · bomba compacta y silenciosa</li>
+              <p class="mt-3 text-sm text-gray-600 flex-1">La prensa insignia: producción media de <strong class="text-graphite">2.000 ladrillos/hora</strong> con compactación de hasta 120 toneladas.</p>
+              <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Compactación de 120 t · 160–250 bar</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Cambio de matriz en 25 minutos</li>
+                <li class="flex gap-2"><span class="text-golddk font-bold">✓</span> Motor trifásico · garantía de 1 año</li>
               </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20S%C3%BAper%20Econ%C3%B3mica%20III." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Súper Económica III</a>
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20VI." target="_blank" rel="noopener" class="btn-wa mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white">Cotizar este modelo</a>
             </div>
           </article>
         </div>
       </div>
 
-      <!-- LÍNEA PREMIUM -->
-      <div class="mt-20 reveal">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
-          <div>
-            <h3 class="font-display text-2xl font-extrabold text-graphite">Línea Premium</h3>
-            <p class="mt-1 text-gray-600">Carga automática y prensado semiautomático por tablero electrónico. Para <strong class="text-graphite">alta producción</strong> y escala industrial.</p>
-          </div>
-          <span class="self-start sm:self-auto rounded-full bg-brand-red/10 px-3 py-1 text-xs font-semibold text-brand-reddark ring-1 ring-brand-red/20">600 – 2.000 ladrillos/hora</span>
-        </div>
+      <p class="mt-10 text-center text-sm text-gray-500 reveal">También fabricamos equipos auxiliares: trituradoras de tierra, mixturadores planetarios, zarandas giratorias y fajas transportadoras. <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20informaci%C3%B3n%20sobre%20los%20equipos%20auxiliares%20para%20la%20producci%C3%B3n%20de%20ladrillos." target="_blank" rel="noopener" class="font-semibold text-golddk underline decoration-gold/40 hover:text-graphite">Pregunta por el paquete completo →</a></p>
+    </div>
+  </section>
 
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <!-- Premium II -->
-          <article class="card-lift edge rounded-2xl shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col text-white">
-            <div class="relative p-5 flex items-center justify-center h-60 bg-white/5">
-              <img src="images/premium-ii.png" alt="Prensa Premium II" class="max-h-52 object-contain" loading="lazy" />
-            </div>
-            <div class="relative p-7 flex flex-col flex-1">
-              <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold">Premium II</h4>
-                <span class="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white/80 ring-1 ring-white/15">Semiautomática</span>
-              </div>
-              <p class="mt-1 text-sm text-white/50">Doble presión · palancas</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-white/75 flex-1">
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> <span><strong class="text-white">600 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Compactación de 50 tn · 160–250 bar</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Motor 10 HP · trifásico 380/440 v</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Matrices: canaleta, paver, lego, King Kong</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> 1.600 kg</li>
-              </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20II." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Premium II</a>
-            </div>
-          </article>
-          <!-- Premium IV -->
-          <article class="card-lift edge rounded-2xl shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col text-white">
-            <div class="relative p-5 flex items-center justify-center h-60 bg-white/5">
-              <img src="images/premium-iv.png" alt="Prensa Premium IV" class="max-h-52 object-contain" loading="lazy" />
-            </div>
-            <div class="relative p-7 flex flex-col flex-1">
-              <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold">Premium IV</h4>
-                <span class="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white/80 ring-1 ring-white/15">Automática</span>
-              </div>
-              <p class="mt-1 text-sm text-white/50">Tablero electrónico</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-white/75 flex-1">
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> <span><strong class="text-white">1.200 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Prensado hasta 100 tn · 130–160 bar</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Motor 25 HP · trifásico 440 v</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Carga automática por secuencias</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> 3.560 kg</li>
-              </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20IV." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Premium IV</a>
-            </div>
-          </article>
-          <!-- Premium VI -->
-          <article class="card-lift edge rounded-2xl shadow-card hover:shadow-float ease-spring overflow-hidden flex flex-col text-white ring-1 ring-brand-gold/40">
-            <div class="relative p-5 flex items-center justify-center h-60 bg-white/5">
-              <span class="absolute top-3 left-3 rounded-full bg-brand-gold px-2.5 py-1 text-xs font-semibold text-graphite-deep shadow-card">Máxima producción</span>
-              <img src="images/premium-vi.png" alt="Prensa Premium VI" class="max-h-52 object-contain" loading="lazy" />
-            </div>
-            <div class="relative p-7 flex flex-col flex-1">
-              <div class="flex items-center justify-between">
-                <h4 class="font-display text-xl font-bold">Premium VI</h4>
-                <span class="rounded-full bg-brand-gold/15 px-2.5 py-1 text-xs font-semibold text-brand-goldlt ring-1 ring-brand-gold/30">Tope de gama</span>
-              </div>
-              <p class="mt-1 text-sm text-white/50">Escala industrial</p>
-              <ul class="mt-5 space-y-2.5 text-sm text-white/75 flex-1">
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> <span><strong class="text-white">2.000 ladrillos/hora</strong></span></li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Compactación de 120 tn · 160–250 bar</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Motor 35 HP</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> Carga automática semiautomática</li>
-                <li class="flex gap-2"><span class="text-brand-goldlt font-bold">›</span> 3.500 kg</li>
-              </ul>
-              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20prensa%20Premium%20VI." target="_blank" rel="noopener" class="btn-gold mt-6 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">Cotizar Premium VI</a>
-            </div>
-          </article>
-        </div>
+  <!-- ====================== MODELOS / COMPARATIVA ====================== -->
+  <section id="modelos" class="bg-white">
+    <div class="mx-auto max-w-6xl px-5 lg:px-8 py-20 lg:py-28">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <p class="eyebrow text-xs font-semibold uppercase text-brandred">Comparativa</p>
+        <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold">¿Súper Económica o Premium?</h2>
+        <div class="accent-bar mx-auto mt-5"></div>
+        <p class="mt-6 text-gray-600">Compara en 30 segundos y <strong class="text-graphite">cotiza la tuya por WhatsApp</strong> — te confirmamos capacidad exacta, plazo de entrega y formas de pago.</p>
       </div>
 
-      <div class="mt-12 rounded-2xl border border-gray-100 bg-mist/60 p-6 sm:p-8 reveal">
-        <h3 class="font-display text-lg font-bold text-graphite">Todas las prensas Draco's incluyen</h3>
-        <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-gray-600">
-          <p class="flex gap-2"><span class="text-brand-gold font-bold">✓</span> Matrices intercambiables mecanizadas</p>
-          <p class="flex gap-2"><span class="text-brand-gold font-bold">✓</span> Cambio de molde en ~25 minutos</p>
-          <p class="flex gap-2"><span class="text-brand-gold font-bold">✓</span> Bomba hidráulica compacta y silenciosa</p>
-          <p class="flex gap-2"><span class="text-brand-gold font-bold">✓</span> 1 año de garantía mecánica e hidráulica</p>
-        </div>
+      <div class="mt-12 overflow-x-auto reveal">
+        <table class="w-full min-w-[640px] text-left text-sm">
+          <thead>
+            <tr class="border-b-2 border-gold/40">
+              <th class="py-4 pr-4 font-display text-base font-extrabold">&nbsp;</th>
+              <th class="py-4 px-4 font-display text-base font-extrabold">Línea Súper Económica</th>
+              <th class="py-4 px-4 font-display text-base font-extrabold">Línea Premium</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 text-gray-600">
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Modelos</td>
+              <td class="py-4 px-4">Súper Económica I · II · III</td>
+              <td class="py-4 px-4">Premium II · IV · VI</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Carga</td>
+              <td class="py-4 px-4">Manual</td>
+              <td class="py-4 px-4">Automática · secuencias semiautomáticas</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Producción</td>
+              <td class="py-4 px-4">200 – 350 ladrillos/hora</td>
+              <td class="py-4 px-4">Hasta 2.000 ladrillos/hora</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Ideal para</td>
+              <td class="py-4 px-4">Empezar: autoconstrucción, emprendimientos, obras puntuales</td>
+              <td class="py-4 px-4">Escalar: ladrilleras, constructoras, proyectos de vivienda</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Garantía</td>
+              <td class="py-4 px-4">1 año (mecánica e hidráulica)</td>
+              <td class="py-4 px-4">1 año (mecánica e hidráulica)</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-semibold text-graphite">Capacitación</td>
+              <td class="py-4 px-4">Incluida</td>
+              <td class="py-4 px-4">Incluida</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="mt-10 text-center reveal">
-        <a href="https://wa.me/51979736684?text=Hola%21%20No%20s%C3%A9%20qu%C3%A9%20m%C3%A1quina%20elegir%2C%20%C2%BFme%20pueden%20orientar%3F" target="_blank" rel="noopener"
-           class="btn-red inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
-          No sé qué máquina elegir. ¿Me orientan?
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20una%20cotizaci%C3%B3n%3A%20no%20s%C3%A9%20si%20me%20conviene%20la%20l%C3%ADnea%20S%C3%BAper%20Econ%C3%B3mica%20o%20la%20Premium.%20%C2%BFMe%20asesoran%3F" target="_blank" rel="noopener"
+           class="btn-wa inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
+          <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
+          Pedir mi cotización ahora
         </a>
+        <p class="mt-4 text-sm text-gray-500">Sin compromiso · Te respondemos con precios y plazos reales</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== POR QUÉ LADRILLOS ECOLÓGICOS ====================== -->
+  <section id="beneficios" class="bg-deep-grad grain relative overflow-hidden">
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-24">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <p class="eyebrow text-xs font-semibold uppercase text-goldlt">El producto final</p>
+        <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold text-white">El ladrillo que baja costos y acelera obras.</h2>
+        <div class="accent-bar mx-auto mt-5"></div>
+        <p class="mt-6 text-white/70">El ladrillo ecológico prensado suelo-cemento se encaja tipo Lego, no necesita quema y deja la obra <strong class="text-white">termoacústica, limpia, rápida y económica</strong>.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <div class="rounded-2xl bg-white/[0.06] ring-1 ring-white/10 p-7 text-center">
+          <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/15 ring-1 ring-gold/30">
+            <svg class="h-9 w-9" viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="22" width="24" height="16" rx="2" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <circle cx="16" cy="30" r="3.4" stroke="#E8CE8C" stroke-width="2.2"/>
+              <circle cx="26" cy="30" r="3.4" stroke="#E8CE8C" stroke-width="2.2"/>
+              <path d="M34 10c2.5 2.5 2.5 5.5 0 8M39 7c4 4 4 10 0 14" stroke="#A81C28" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Termoacústico</h3>
+          <p class="mt-2 text-sm text-white/65">Ambientes más frescos y silenciosos gracias a las cámaras de aire del ladrillo.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/[0.06] ring-1 ring-white/10 p-7 text-center">
+          <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/15 ring-1 ring-gold/30">
+            <svg class="h-9 w-9" viewBox="0 0 48 48" fill="none">
+              <path d="M24 40c-8 0-13-5-13-12 0-9 8-15 13-18 5 3 13 9 13 18 0 7-5 12-13 12z" fill="#C9A24B" fill-opacity=".22" stroke="#E8CE8C" stroke-width="2.2"/>
+              <path d="M24 38V22M24 28l-5-4M24 25l5-4" stroke="#E8CE8C" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M8 8l8 8M16 8l-8 8" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Sin quema · limpio</h3>
+          <p class="mt-2 text-sm text-white/65">Curado sin hornos ni humo: produce donde quieras, sin pasivos ambientales.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/[0.06] ring-1 ring-white/10 p-7 text-center">
+          <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/15 ring-1 ring-gold/30">
+            <svg class="h-9 w-9" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="30" width="16" height="10" rx="1.5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <rect x="14" y="20" width="16" height="10" rx="1.5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <rect x="22" y="10" width="16" height="10" rx="1.5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <path d="M40 30l-5 9h4l-2 6 7-10h-4l3-5h-3z" fill="#A81C28"/>
+            </svg>
+          </span>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Obra rápida</h3>
+          <p class="mt-2 text-sm text-white/65">Encaje tipo Lego con menos mortero: levanta muros en una fracción del tiempo.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/[0.06] ring-1 ring-white/10 p-7 text-center">
+          <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/15 ring-1 ring-gold/30">
+            <svg class="h-9 w-9" viewBox="0 0 48 48" fill="none">
+              <ellipse cx="20" cy="34" rx="12" ry="5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <ellipse cx="20" cy="28" rx="12" ry="5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <ellipse cx="20" cy="22" rx="12" ry="5" fill="#C9A24B" fill-opacity=".28" stroke="#E8CE8C" stroke-width="2.2"/>
+              <path d="M38 14v14M38 28l-4-4M38 28l4-4" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-5 font-display text-lg font-bold text-white">Menor costo</h3>
+          <p class="mt-2 text-sm text-white/65">Usa el suelo del lugar y reduce fletes, mortero y mano de obra por m².</p>
+        </div>
+      </div>
+
+      <!-- ¿Para quién? -->
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+        <div class="gold-edge rounded-2xl bg-white/[0.04] p-6">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
+            <svg class="h-7 w-7" viewBox="0 0 48 48" fill="none">
+              <path d="M10 30c0-8 6-15 14-15s14 7 14 15" fill="#C9A24B" fill-opacity=".3" stroke="#E8CE8C" stroke-width="2.2"/>
+              <path d="M6 30h36v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4z" fill="#E8CE8C" stroke="#E8CE8C" stroke-width="1.6"/>
+              <path d="M24 15v-5" stroke="#A81C28" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-4 font-display text-base font-bold text-white">Constructoras y maestros</h3>
+          <p class="mt-1.5 text-sm text-white/60">Produce tu propio ladrillo en obra y deja de depender de proveedores.</p>
+        </div>
+        <div class="gold-edge rounded-2xl bg-white/[0.04] p-6">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
+            <svg class="h-7 w-7" viewBox="0 0 48 48" fill="none">
+              <path d="M8 40V20l10 6V20l10 6V20l12 8v12H8z" fill="#C9A24B" fill-opacity=".3" stroke="#E8CE8C" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M30 12l6-6m0 0h-5m5 0v5" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-4 font-display text-base font-bold text-white">Emprendedores</h3>
+          <p class="mt-1.5 text-sm text-white/60">Monta tu ladrillera y vende a un mercado con demanda constante.</p>
+        </div>
+        <div class="gold-edge rounded-2xl bg-white/[0.04] p-6">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
+            <svg class="h-7 w-7" viewBox="0 0 48 48" fill="none">
+              <path d="M8 40h32M10 36h28M24 6 8 16h32L24 6z" fill="#C9A24B" fill-opacity=".3" stroke="#E8CE8C" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M13 20v12M21 20v12M27 20v12M35 20v12" stroke="#E8CE8C" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="mt-4 font-display text-base font-bold text-white">Municipios y programas</h3>
+          <p class="mt-1.5 text-sm text-white/60">Vivienda social con producción local y generación de empleo.</p>
+        </div>
+        <div class="gold-edge rounded-2xl bg-white/[0.04] p-6">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
+            <svg class="h-7 w-7" viewBox="0 0 48 48" fill="none">
+              <path d="M4 40 18 16l8 12 6-8 12 20H4z" fill="#C9A24B" fill-opacity=".3" stroke="#E8CE8C" stroke-width="2.2" stroke-linejoin="round"/>
+              <circle cx="36" cy="10" r="3" fill="#A81C28"/>
+            </svg>
+          </span>
+          <h3 class="mt-4 font-display text-base font-bold text-white">Minería y relaves</h3>
+          <p class="mt-1.5 text-sm text-white/60">Economía circular: convierte relaves mineros en material de construcción.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ====================== CÓMO FUNCIONA ====================== -->
-  <section id="como-funciona" class="bg-sand">
+  <section id="como-funciona" class="bg-sand/60">
     <div class="mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-28">
       <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Cómo funciona</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">De la asesoría a tu primer ladrillo.</h2>
+        <p class="eyebrow text-xs font-semibold uppercase text-brandred">Cómo funciona</p>
+        <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold">Compra acompañada, de la cotización a la producción.</h2>
         <div class="accent-bar mx-auto mt-5"></div>
-        <p class="mt-6 text-gray-600">No entregamos solo una máquina: te acompañamos para que produzcas con calidad desde el primer día.</p>
+        <p class="mt-6 text-gray-600">No te vendemos una máquina y desaparecemos: <strong class="text-graphite">transferimos el método completo</strong> para que produzcas bien desde el primer día.</p>
       </div>
 
       <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
         <div class="relative rounded-2xl bg-white p-7 shadow-card">
-          <span class="font-display text-5xl font-extrabold text-brand-gold/25">01</span>
-          <h3 class="mt-2 font-display text-lg font-bold text-graphite">Asesoría y mecánica de suelos</h3>
-          <p class="mt-2 text-sm text-gray-600">Analizamos tu tierra y tu proyecto para definir la dosificación y el modelo ideal.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-5xl font-extrabold text-gold/25">01</span>
+            <svg class="h-10 w-10" viewBox="0 0 48 48" fill="none">
+              <path d="M20 6h8M22 6v10L12 34a6 6 0 0 0 5.3 9h13.4A6 6 0 0 0 36 34L26 16V6" stroke="#211B10" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 30h16l4 8a4 4 0 0 1-3.6 5H15.6a4 4 0 0 1-3.6-5l4-8z" fill="#C9A24B" fill-opacity=".4"/>
+            </svg>
+          </div>
+          <h3 class="mt-2 font-display text-lg font-bold">Asesoría + mecánica de suelos</h3>
+          <p class="mt-2 text-sm text-gray-600">Analizamos tu suelo y tu proyecto para confirmar la mezcla ideal de tu ladrillo.</p>
         </div>
         <div class="relative rounded-2xl bg-white p-7 shadow-card">
-          <span class="font-display text-5xl font-extrabold text-brand-gold/25">02</span>
-          <h3 class="mt-2 font-display text-lg font-bold text-graphite">Elección de la máquina</h3>
-          <p class="mt-2 text-sm text-gray-600">Elegimos juntos la prensa y las matrices según tu producción y presupuesto.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-5xl font-extrabold text-gold/25">02</span>
+            <svg class="h-10 w-10" viewBox="0 0 48 48" fill="none">
+              <path d="M8 10a4 4 0 0 1 4-4h18l10 10v22a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V10z" fill="#C9A24B" fill-opacity=".18" stroke="#211B10" stroke-width="2.4"/>
+              <path d="M30 6v10h10" stroke="#211B10" stroke-width="2.4" stroke-linejoin="round"/>
+              <path d="M15 26h12M15 32h18" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="mt-2 font-display text-lg font-bold">Cotización a tu medida</h3>
+          <p class="mt-2 text-sm text-gray-600">Eliges el modelo con precios, plazos y formas de pago claros por WhatsApp.</p>
         </div>
         <div class="relative rounded-2xl bg-white p-7 shadow-card">
-          <span class="font-display text-5xl font-extrabold text-brand-gold/25">03</span>
-          <h3 class="mt-2 font-display text-lg font-bold text-graphite">Instalación y puesta en marcha</h3>
-          <p class="mt-2 text-sm text-gray-600">Entregamos, montamos y dejamos la máquina produciendo en tu planta.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-5xl font-extrabold text-gold/25">03</span>
+            <svg class="h-10 w-10" viewBox="0 0 48 48" fill="none">
+              <path d="M4 12h24v20H4zM28 18h9l7 8v6h-16" fill="#C9A24B" fill-opacity=".18" stroke="#211B10" stroke-width="2.4" stroke-linejoin="round"/>
+              <circle cx="13" cy="36" r="4" fill="#fff" stroke="#211B10" stroke-width="2.4"/>
+              <circle cx="36" cy="36" r="4" fill="#fff" stroke="#211B10" stroke-width="2.4"/>
+              <path d="M10 18h8" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="mt-2 font-display text-lg font-bold">Entrega e instalación</h3>
+          <p class="mt-2 text-sm text-gray-600">Fabricamos, entregamos y dejamos tu prensa operativa en tu terreno.</p>
         </div>
         <div class="relative rounded-2xl bg-white p-7 shadow-card">
-          <span class="font-display text-5xl font-extrabold text-brand-gold/25">04</span>
-          <h3 class="mt-2 font-display text-lg font-bold text-graphite">Capacitación y soporte</h3>
-          <p class="mt-2 text-sm text-gray-600">Capacitamos a tu equipo y te damos soporte técnico continuo en Perú y Brasil.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-5xl font-extrabold text-gold/25">04</span>
+            <svg class="h-10 w-10" viewBox="0 0 48 48" fill="none">
+              <path d="M24 8 4 18l20 10 20-10L24 8z" fill="#C9A24B" fill-opacity=".35" stroke="#211B10" stroke-width="2.4" stroke-linejoin="round"/>
+              <path d="M12 23v10c0 3 5.4 6 12 6s12-3 12-6V23" stroke="#211B10" stroke-width="2.4"/>
+              <path d="M44 18v10" stroke="#A81C28" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="mt-2 font-display text-lg font-bold">Capacitación + soporte</h3>
+          <p class="mt-2 text-sm text-gray-600">Entrenamos a tu equipo y seguimos contigo: garantía de 1 año y soporte técnico.</p>
         </div>
       </div>
-      <p class="mt-10 text-center text-gray-600 max-w-2xl mx-auto reveal">Es una inversión de mediano y largo plazo, y por eso construimos una relación real con cada cliente: <strong class="text-graphite">no desaparecemos después de la venta.</strong></p>
+
+      <div class="mt-12 text-center reveal">
+        <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20empezar%3A%20%C2%BFme%20ayudan%20con%20la%20asesor%C3%ADa%20inicial%20gratuita%3F" target="_blank" rel="noopener"
+           class="btn-gold inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-bold text-graphite">
+          Empezar con la asesoría gratuita
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -548,254 +641,186 @@
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="reveal order-1">
           <div class="relative mx-auto max-w-lg">
-            <div class="absolute -inset-3 rounded-3xl bg-graphite/5"></div>
-            <div id="nos-carousel" class="group relative rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-graphite ring-1 ring-black/5">
-              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-100">
+            <div class="absolute -inset-3 rounded-3xl bg-gold/10"></div>
+            <div id="nos-carousel" class="gold-edge relative rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-graphite">
+              <figure data-slide class="slide absolute inset-0 opacity-100">
                 <img src="images/fabrica-real.jpeg" alt="Equipo de Draco's Sur América con distintos modelos de ladrillos ecológicos" class="h-full w-full object-cover" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Equipo Draco's · fabricación propia</figcaption>
               </figure>
-              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <figure data-slide class="slide absolute inset-0 opacity-0">
                 <img src="images/expo-patenta.jpeg" alt="Ing. Esgard Salcedo en la Expo Patenta INDECOPI 2019" class="h-full w-full object-cover" loading="lazy" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Expo Patenta · INDECOPI 2019</figcaption>
               </figure>
-              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <figure data-slide class="slide absolute inset-0 opacity-0">
                 <img src="images/conferencia-cajamarca.jpeg" alt="Conferencia en el Gobierno Regional de Cajamarca" class="h-full w-full object-cover" loading="lazy" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Conferencia · Gobierno Regional de Cajamarca</figcaption>
               </figure>
-              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <figure data-slide class="slide absolute inset-0 opacity-0">
                 <img src="images/excon-capeco.jpeg" alt="Draco's presente en EXCON, organizada por CAPECO 2021" class="h-full w-full object-cover" loading="lazy" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">EXCON · CAPECO 2021</figcaption>
               </figure>
-              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <figure data-slide class="slide absolute inset-0 opacity-0">
                 <img src="images/expo-inventos.jpeg" alt="Stand de Draco's Sur América en la Expo de Inventos 2019" class="h-full w-full object-cover" loading="lazy" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Expo de Inventos 2019</figcaption>
               </figure>
-
-              <button type="button" class="nos-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-white" aria-label="Imagen anterior">
+              <button type="button" data-prev class="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 hover:opacity-100 hover:bg-white transition-opacity" aria-label="Imagen anterior">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="nos-next absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-white" aria-label="Siguiente imagen">
+              <button type="button" data-next class="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 hover:opacity-100 hover:bg-white transition-opacity" aria-label="Siguiente imagen">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
               </button>
-              <div class="nos-dots absolute bottom-4 right-4 z-10 flex gap-1.5"></div>
+              <div data-dots class="absolute bottom-4 right-4 z-10 flex gap-1.5"></div>
             </div>
           </div>
         </div>
+
         <div class="reveal order-2">
-          <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Nosotros</p>
-          <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Draco's Sur América: tecnología para la construcción.</h2>
+          <p class="eyebrow text-xs font-semibold uppercase text-brandred">Nosotros</p>
+          <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold">Ingeniería peruana con años de máquinas trabajando.</h2>
           <div class="accent-bar mt-5"></div>
           <p class="mt-6 text-gray-600">
-            Diseñamos y fabricamos maquinaria para producir <strong class="text-graphite">ladrillos ecológicos</strong> y concreto celular. Cada máquina se construye con un <strong class="text-graphite">alto estándar de tecnología y materiales</strong>, pensada para durar y producir a bajo costo.
+            Diseñamos y fabricamos maquinaria para producir <strong class="text-graphite">ladrillos ecológicos</strong> y concreto celular. Cada prensa se construye con un <strong class="text-graphite">alto estándar de tecnología y materiales</strong>, pensada para durar y producir a bajo costo.
           </p>
-          <p class="mt-5 text-gray-600">
-            Más que vender equipos, transferimos un método: mecánica de suelos, dosificación, capacitación y soporte. Acompañamos a nuestros clientes en la <strong class="text-graphite">economía circular</strong>, incluyendo el aprovechamiento de <strong class="text-graphite">relaves mineros</strong>.
+          <p class="mt-4 text-gray-600">
+            Más que vender equipos, transferimos un método: mecánica de suelos, dosificación, capacitación y soporte. Acompañamos a nuestros clientes en la <strong class="text-graphite">economía circular</strong>, incluyendo el aprovechamiento de relaves mineros.
           </p>
-          <div class="mt-7 grid grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-mist/70 p-5">
-              <p class="font-display text-2xl font-extrabold text-graphite">Perú &amp; Brasil</p>
+
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-mist p-5">
+              <p class="font-display text-2xl font-extrabold">Perú &amp; Brasil</p>
               <p class="text-sm text-gray-500 mt-0.5">Presencia y soporte</p>
             </div>
-            <div class="rounded-2xl bg-mist/70 p-5">
-              <p class="font-display text-2xl font-extrabold text-graphite">Fabricación propia</p>
+            <div class="rounded-2xl bg-mist p-5">
+              <p class="font-display text-2xl font-extrabold">Fabricación propia</p>
               <p class="text-sm text-gray-500 mt-0.5">Diseño e ingeniería</p>
             </div>
           </div>
           <div class="mt-6 flex flex-wrap items-center gap-2">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gray-200 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span> Expo Patenta INDECOPI 2019</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gray-200 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span> EXCON · CAPECO 2021</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gray-200 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span> Expo de Inventos 2019</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gold/40 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Expo Patenta INDECOPI 2019</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gold/40 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span> EXCON · CAPECO 2021</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white ring-1 ring-gold/40 px-3 py-1.5 text-xs font-semibold text-graphite/80"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Expo de Inventos 2019</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====================== POR QUÉ DRACO'S ====================== -->
-  <section class="bg-mist">
-    <div class="mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-24">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Por qué Draco's</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Una máquina es tan buena como el soporte detrás.</h2>
-        <div class="accent-bar mx-auto mt-5"></div>
-      </div>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">1 año de garantía</h3>
-          <p class="mt-2 text-sm text-gray-600">Cobertura mecánica e hidráulica en todos los modelos.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 20H4v-6M4 20l8-8"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">Matrices intercambiables</h3>
-          <p class="mt-2 text-sm text-gray-600">Cambia de modelo de ladrillo en ~25 min: bloque, canaleta, paver, adoquín y más.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 8v4l3 2"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">Alta tecnología</h3>
-          <p class="mt-2 text-sm text-gray-600">Cajas de molde tratadas y rectificadas, bomba compacta y mayor vida útil.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 4 2 10l10 6 10-6z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">Capacitación incluida</h3>
-          <p class="mt-2 text-sm text-gray-600">Enseñamos a tu equipo a producir con calidad y dosificación correcta.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M2 12c4 2 16 2 20 0"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">Economía circular</h3>
-          <p class="mt-2 text-sm text-gray-600">Asesoría para transformar relaves mineros y residuos en material de construcción.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-7 shadow-card">
-          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-golddk"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V10l6-5 6 5v10"/><path d="M10 20v-6h4v6"/></svg></div>
-          <h3 class="mt-4 font-display text-lg font-bold text-graphite">Soporte en Perú y Brasil</h3>
-          <p class="mt-2 text-sm text-gray-600">Atención local y respaldo técnico continuo después de la compra.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== MODELOS / COMPARATIVA ====================== -->
-  <section id="modelos" class="bg-white">
-    <div class="mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-28">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Modelos</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Compara y elige tu prensa.</h2>
-        <div class="accent-bar mx-auto mt-5"></div>
-        <p class="mt-6 text-gray-600">El precio depende del modelo, las matrices y el destino de envío. Pídenos una <strong class="text-graphite">cotización sin compromiso</strong>.</p>
-      </div>
-
-      <div class="mt-12 overflow-x-auto reveal rounded-2xl ring-1 ring-gray-100 shadow-card">
-        <table class="w-full min-w-[720px] text-left text-sm">
-          <thead>
-            <tr class="bg-graphite text-white">
-              <th class="px-5 py-4 font-semibold">Modelo</th>
-              <th class="px-5 py-4 font-semibold">Producción</th>
-              <th class="px-5 py-4 font-semibold">Compactación</th>
-              <th class="px-5 py-4 font-semibold">Motor</th>
-              <th class="px-5 py-4 font-semibold">Accionamiento</th>
-              <th class="px-5 py-4 font-semibold text-right">Cotizar</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-100">
-            <tr class="hover:bg-mist/50">
-              <td class="px-5 py-4 font-bold text-graphite">Súper Económica I</td>
-              <td class="px-5 py-4 text-gray-600">200 /h</td>
-              <td class="px-5 py-4 text-gray-600">5 tn</td>
-              <td class="px-5 py-4 text-gray-600">5 HP · 220 v</td>
-              <td class="px-5 py-4 text-gray-600">Manual</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20S%C3%BAper%20Econ%C3%B3mica%20I." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-            <tr class="hover:bg-mist/50">
-              <td class="px-5 py-4 font-bold text-graphite">Súper Económica II</td>
-              <td class="px-5 py-4 text-gray-600">250 /h</td>
-              <td class="px-5 py-4 text-gray-600">6 tn</td>
-              <td class="px-5 py-4 text-gray-600">5 HP · 220 v</td>
-              <td class="px-5 py-4 text-gray-600">Manual</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20S%C3%BAper%20Econ%C3%B3mica%20II." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-            <tr class="hover:bg-mist/50">
-              <td class="px-5 py-4 font-bold text-graphite">Súper Económica III</td>
-              <td class="px-5 py-4 text-gray-600">350 /h</td>
-              <td class="px-5 py-4 text-gray-600">15 tn</td>
-              <td class="px-5 py-4 text-gray-600">7,5 HP · trifásico</td>
-              <td class="px-5 py-4 text-gray-600">Manual</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20S%C3%BAper%20Econ%C3%B3mica%20III." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-            <tr class="hover:bg-mist/50 bg-brand-gold/[0.04]">
-              <td class="px-5 py-4 font-bold text-graphite">Premium II</td>
-              <td class="px-5 py-4 text-gray-600">600 /h</td>
-              <td class="px-5 py-4 text-gray-600">50 tn</td>
-              <td class="px-5 py-4 text-gray-600">10 HP · trifásico</td>
-              <td class="px-5 py-4 text-gray-600">Semiautomático</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20Premium%20II." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-            <tr class="hover:bg-mist/50 bg-brand-gold/[0.04]">
-              <td class="px-5 py-4 font-bold text-graphite">Premium IV</td>
-              <td class="px-5 py-4 text-gray-600">1.200 /h</td>
-              <td class="px-5 py-4 text-gray-600">100 tn</td>
-              <td class="px-5 py-4 text-gray-600">25 HP · trifásico</td>
-              <td class="px-5 py-4 text-gray-600">Automático</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20Premium%20IV." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-            <tr class="hover:bg-mist/50 bg-brand-gold/[0.04]">
-              <td class="px-5 py-4 font-bold text-graphite">Premium VI</td>
-              <td class="px-5 py-4 text-gray-600">2.000 /h</td>
-              <td class="px-5 py-4 text-gray-600">120 tn</td>
-              <td class="px-5 py-4 text-gray-600">35 HP</td>
-              <td class="px-5 py-4 text-gray-600">Automático</td>
-              <td class="px-5 py-4 text-right"><a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20la%20Premium%20VI." target="_blank" rel="noopener" class="font-semibold text-brand-golddk hover:underline">Cotizar →</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mt-10 text-center reveal">
-        <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20la%20lista%20de%20precios%20y%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20ladrillos." target="_blank" rel="noopener"
-           class="btn-wa inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
-          <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-          Solicitar cotización por WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== TESTIMONIOS ====================== -->
+  <!-- ====================== TESTIMONIOS (Google) ====================== -->
   <section id="testimonios" class="bg-mist">
     <div class="mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-24">
       <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow text-xs font-semibold uppercase text-brand-red">Clientes</p>
-        <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-bold text-graphite">Productores que ya fabrican con Draco's.</h2>
+        <p class="eyebrow text-xs font-semibold uppercase text-brandred">Clientes reales</p>
+        <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold">Máquinas entregadas, clientes produciendo.</h2>
         <div class="accent-bar mx-auto mt-5"></div>
+        <a href="https://www.google.com/maps/place/Draco's+Sur+America/@-7.1920012,-78.4975242,17z/data=!4m8!3m7!1s0x91b25b4012a5be2b:0x33e7cf538620c53d!8m2!3d-7.1920012!4d-78.4975242!9m1!1b1!16s%2Fg%2F11r3j6lvw5" target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 shadow-card ring-1 ring-gray-100 hover:shadow-float transition-shadow">
+          <svg class="h-5 w-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span class="text-sm font-bold">5,0 <span class="text-gold">★★★★★</span></span>
+          <span class="text-sm text-gray-500">13 reseñas en Google</span>
+        </a>
       </div>
 
       <div class="mt-12 grid md:grid-cols-3 gap-6 reveal">
-        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float ease-spring">
-          <div class="text-brand-gold tracking-wider">★★★★★</div>
-          <blockquote class="mt-4 text-gray-700">"Empecé con la Súper Económica III y en pocos meses ya vendía ladrillos en mi zona. La capacitación fue clave."</blockquote>
+        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float">
+          <div class="flex items-center justify-between">
+            <div class="text-gold tracking-wider">★★★★★</div>
+            <svg class="h-4 w-4 opacity-70" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-gray-700">"Excelente atendimento da vendedora, a máquina foi entregue no prazo, o equipamento é bem robusto e principalmente o atendimento técnico é excepcional. Estou muito feliz com a máquina que comprei."</blockquote>
           <figcaption class="mt-6 flex items-center gap-3">
-            <img src="https://placehold.co/48x48/f1f1f3/1a1a1f?text=J" alt="" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
-            <div><p class="font-semibold text-graphite text-sm flex items-center gap-2">José R. <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Perú"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span></p><p class="text-xs text-gray-500">Emprendedor • Cajamarca</p></div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gold/15 font-display font-extrabold text-golddk">C</span>
+            <div>
+              <p class="font-semibold text-sm flex items-center gap-2">Carlos Stenzowski
+                <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Brasil"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="28" height="20" fill="#009b3a"/><path d="M14 2 26 10 14 18 2 10Z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.2" fill="#002776"/></svg></span>
+              </p>
+              <p class="text-xs text-gray-500">Cliente de Brasil · Reseña de Google</p>
+            </div>
           </figcaption>
         </figure>
-        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float ease-spring">
-          <div class="text-brand-gold tracking-wider">★★★★★</div>
-          <blockquote class="mt-4 text-gray-700">"La Premium IV nos dio el volumen que necesitábamos para obra. Soporte atento y repuestos sin demora."</blockquote>
+
+        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float">
+          <div class="flex items-center justify-between">
+            <div class="text-gold tracking-wider">★★★★★</div>
+            <svg class="h-4 w-4 opacity-70" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-gray-700">"Tecnología de construcción innovadora, sostenible y económica para la ciudad de Cajamarca."</blockquote>
           <figcaption class="mt-6 flex items-center gap-3">
-            <img src="https://placehold.co/48x48/f1f1f3/1a1a1f?text=M" alt="" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
-            <div><p class="font-semibold text-graphite text-sm flex items-center gap-2">María C. <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Perú"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span></p><p class="text-xs text-gray-500">Constructora • Lima</p></div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gold/15 font-display font-extrabold text-golddk">R</span>
+            <div>
+              <p class="font-semibold text-sm flex items-center gap-2">Rodrigo Salcedo Alcántara
+                <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Perú"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span>
+              </p>
+              <p class="text-xs text-gray-500">Cajamarca, Perú · Reseña de Google</p>
+            </div>
           </figcaption>
         </figure>
-        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float ease-spring">
-          <div class="text-brand-gold tracking-wider">★★★★★</div>
-          <blockquote class="mt-4 text-gray-700">"Aprovechamos relaves para producir bloques. Draco's nos asesoró en todo el proceso de economía circular."</blockquote>
+
+        <figure class="card-lift rounded-2xl border border-gray-100 bg-white p-7 shadow-card hover:shadow-float">
+          <div class="flex items-center justify-between">
+            <div class="text-gold tracking-wider">★★★★★</div>
+            <svg class="h-4 w-4 opacity-70" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-gray-700">"¡Calidad, compromiso y excelente atención!"</blockquote>
           <figcaption class="mt-6 flex items-center gap-3">
-            <img src="https://placehold.co/48x48/f1f1f3/1a1a1f?text=L" alt="" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
-            <div><p class="font-semibold text-graphite text-sm flex items-center gap-2">Luis A. <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Perú"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span></p><p class="text-xs text-gray-500">Proyecto minero • Arequipa</p></div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gold/15 font-display font-extrabold text-golddk">C</span>
+            <div>
+              <p class="font-semibold text-sm flex items-center gap-2">Cinthia Aracely Ortiz Vasquez
+                <span class="inline-block h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-black/10" title="Perú"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span>
+              </p>
+              <p class="text-xs text-gray-500">Perú · Reseña de Google</p>
+            </div>
           </figcaption>
         </figure>
       </div>
-      <p class="mt-6 text-center text-xs text-gray-400 reveal">Testimonios ilustrativos: reemplazar por reseñas reales de clientes cuando estén disponibles.</p>
     </div>
   </section>
 
-  <!-- ====================== CTA BAND ====================== -->
-  <section class="relative bg-deep grain overflow-hidden">
+  <!-- ====================== CTA BAND — TU PROPIA FÁBRICA ====================== -->
+  <section class="relative bg-deep-grad grain overflow-hidden">
     <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="reveal">
-          <p class="eyebrow text-xs font-semibold uppercase text-brand-goldlt">Tu propia fábrica de ladrillos</p>
-          <h2 class="heading-tight mt-3 text-3xl lg:text-4xl font-extrabold text-white">Empieza a producir tus ladrillos ecológicos.</h2>
-          <p class="mt-5 text-lg text-white/80">Cuéntanos tu proyecto y te enviamos una cotización con el modelo que mejor se ajusta a tu producción.</p>
-          <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20empezar%20mi%20producci%C3%B3n%20de%20ladrillos%20ecol%C3%B3gicos.%20%C2%BFMe%20env%C3%ADan%20una%20cotizaci%C3%B3n%3F" target="_blank" rel="noopener"
+          <p class="eyebrow text-xs font-semibold uppercase text-goldlt">El siguiente paso es tuyo</p>
+          <h2 class="heading-tight mt-3 font-display text-3xl lg:text-4xl font-extrabold text-white">Tu propia fábrica de ladrillos puede empezar esta semana.</h2>
+          <p class="mt-5 text-lg text-white/75">Cuéntanos tu proyecto por WhatsApp y recibe <strong class="text-white">cotización, plazos de entrega y formas de pago</strong> — con asesoría gratuita para elegir bien tu modelo.</p>
+          <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20montar%20mi%20producci%C3%B3n%20de%20ladrillos%20ecol%C3%B3gicos.%20%C2%BFMe%20env%C3%ADan%20una%20cotizaci%C3%B3n%3F" target="_blank" rel="noopener"
              class="btn-wa mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
             <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-            Solicitar cotización
+            Cotizar mi máquina ahora
           </a>
+          <p class="mt-4 text-sm text-white/60">Atención en español y portugués · Perú y Brasil</p>
         </div>
+
         <div class="reveal">
           <div class="relative mx-auto max-w-lg">
-            <div class="absolute -inset-3 rounded-3xl bg-brand-gold/15 blur-2xl"></div>
-            <img src="images/super-economica-iii.png" alt="Prensa Súper Económica III de Draco's Sur América" class="relative w-full object-contain drop-shadow-2xl" loading="lazy" />
+            <div class="absolute -inset-3 rounded-3xl bg-gold/15 blur-2xl"></div>
+            <div id="maq-carousel" class="gold-edge relative rounded-2xl overflow-hidden shadow-float aspect-[4/3] bg-cream">
+              <figure data-slide class="slide absolute inset-0 opacity-100">
+                <img src="images/super-economica-i.png" alt="Prensa Súper Económica I" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Súper Económica I</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/super-economica-ii.png" alt="Prensa Súper Económica II" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Súper Económica II</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/super-economica-iii.png" alt="Prensa Súper Económica III" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Súper Económica III</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/premium-ii.png" alt="Prensa Premium II" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Premium II</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/premium-iv.png" alt="Prensa Premium IV" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Premium IV</figcaption>
+              </figure>
+              <figure data-slide class="slide absolute inset-0 opacity-0">
+                <img src="images/premium-vi.png" alt="Prensa Premium VI" class="h-full w-full object-contain p-8" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Premium VI · tope de línea</figcaption>
+              </figure>
+              <div data-dots class="absolute bottom-4 right-4 z-10 flex gap-1.5"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -803,48 +828,48 @@
   </section>
 
   <!-- ====================== CONTACTO ====================== -->
-  <section id="contacto" class="relative bg-graphite-deep grain overflow-hidden">
+  <section id="contacto" class="relative bg-deep grain overflow-hidden">
     <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 lg:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="grid lg:grid-cols-2 gap-12">
         <div class="text-white reveal">
-          <p class="eyebrow text-xs font-semibold uppercase text-brand-goldlt">Contacto</p>
-          <h2 class="heading-tight mt-3 text-3xl lg:text-5xl font-extrabold">Será un gusto atenderte.</h2>
+          <p class="eyebrow text-xs font-semibold uppercase text-goldlt">Contacto</p>
+          <h2 class="heading-tight mt-3 font-display text-3xl lg:text-5xl font-extrabold">Cotiza hoy. Produce cuanto antes.</h2>
           <div class="accent-bar mt-5"></div>
-          <p class="mt-6 max-w-xl text-lg text-white/80">
-            Escríbenos por WhatsApp y recibe, sin compromiso, la cotización y la orientación sobre qué máquina se ajusta a tu proyecto.
+          <p class="mt-6 max-w-xl text-lg text-white/75">
+            Escríbenos por WhatsApp con tu proyecto (o tus dudas) y recibe una <strong class="text-white">cotización clara, sin compromiso</strong>. Atendemos Perú, Brasil y toda Sudamérica.
           </p>
-          <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20fabricar%20ladrillos." target="_blank" rel="noopener"
+          <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20cotizar%20una%20m%C3%A1quina%20para%20fabricar%20ladrillos%20ecol%C3%B3gicos." target="_blank" rel="noopener"
              class="btn-wa mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white">
             <svg class="h-5 w-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
-            WhatsApp Perú
+            Cotizar por WhatsApp
           </a>
         </div>
 
-        <div class="reveal grid sm:grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-            <p class="text-xs uppercase eyebrow font-semibold text-brand-goldlt">Perú</p>
-            <a href="https://wa.me/51979736684" target="_blank" rel="noopener" class="mt-2 block font-display text-lg font-bold text-white hover:text-brand-goldlt transition-colors">+51 979 736 684</a>
-            <p class="text-sm text-white/50">WhatsApp · llamadas</p>
+        <div class="grid gap-4 content-start reveal">
+          <div class="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-6">
+            <p class="eyebrow text-xs font-semibold uppercase text-goldlt">Perú</p>
+            <a href="https://wa.me/51979736684" target="_blank" rel="noopener" class="mt-1 block font-display text-2xl font-extrabold text-white hover:text-goldlt transition-colors">+51 979 736 684</a>
+            <p class="text-sm text-white/55">WhatsApp · llamadas · Cajamarca</p>
           </div>
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-            <p class="text-xs uppercase eyebrow font-semibold text-brand-goldlt">Brasil</p>
-            <a href="https://wa.me/5511981936423" target="_blank" rel="noopener" class="mt-2 block font-display text-lg font-bold text-white hover:text-brand-goldlt transition-colors">+55 11 98193-6423</a>
-            <p class="text-sm text-white/50">WhatsApp · llamadas</p>
+          <div class="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-6">
+            <p class="eyebrow text-xs font-semibold uppercase text-goldlt">Brasil</p>
+            <a href="https://wa.me/5511981936423" target="_blank" rel="noopener" class="mt-1 block font-display text-2xl font-extrabold text-white hover:text-goldlt transition-colors">+55 11 98193-6423</a>
+            <p class="text-sm text-white/55">WhatsApp · llamadas</p>
           </div>
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 sm:col-span-2">
-            <p class="text-xs uppercase eyebrow font-semibold text-brand-goldlt">Correo</p>
-            <a href="mailto:lmondini@dracossuramerica.com" class="mt-2 block text-white hover:text-brand-goldlt transition-colors">lmondini@dracossuramerica.com</a>
-            <a href="mailto:esalcedo@dracossuramerica.com" class="block text-white hover:text-brand-goldlt transition-colors">esalcedo@dracossuramerica.com</a>
+          <div class="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-6">
+            <p class="eyebrow text-xs font-semibold uppercase text-goldlt">Correo</p>
+            <p class="mt-1 text-white/85">lmondini@dracossuramerica.com</p>
+            <p class="text-white/85">esalcedo@dracossuramerica.com</p>
           </div>
-          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 sm:col-span-2">
-            <p class="text-xs uppercase eyebrow font-semibold text-brand-goldlt">Síguenos</p>
-            <div class="mt-3 flex flex-wrap items-center gap-3">
-              <a href="https://www.instagram.com/dracossuramerica_/" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-              <a href="https://www.facebook.com/dracossuramerica" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
-              <a href="https://www.tiktok.com/@dracossuramericaoficial" target="_blank" rel="noopener" aria-label="TikTok" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.1 1.5 3.8 3.6 4.2v2.7c-1.3.1-2.5-.3-3.6-1v5.6c0 3.4-2.7 5.8-5.9 5.5-2.7-.2-4.9-2.5-4.9-5.2 0-3.2 3-5.6 6.2-4.9v2.8c-.4-.1-.9-.2-1.3-.1-1.2.1-2.1 1.1-2 2.3.1 1.1 1 2 2.2 2 1.2 0 2.2-1 2.2-2.2V3H16z"/></svg></a>
-              <a href="https://www.youtube.com/@dracossuramerica" target="_blank" rel="noopener" aria-label="YouTube" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.3-.4-4.9c-.2-.9-.9-1.6-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.7 1 12 1 12s0 3.3.4 4.9c.2.9.9 1.6 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg></a>
-              <a href="https://es.pinterest.com/dracosmaquinaria/" target="_blank" rel="noopener" aria-label="Pinterest" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 3 5.9 3 10c0 2.6 1.4 5 3.6 5.9-.1-.5-.2-1.3 0-1.9l1.1-4.6s-.3-.6-.3-1.4c0-1.3.8-2.3 1.7-2.3.8 0 1.2.6 1.2 1.4 0 .8-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.8 0-4.5 2.1-4.5 4.3 0 .8.3 1.7.7 2.2.1.1.1.2.1.3l-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2 1-.9 2.2-1.4 2.9.9.3 1.9.5 2.9.5 5.5 0 9-3.9 9-9S17.5 2 12 2z"/></svg></a>
-              <a href="https://www.linkedin.com/company/draco%C2%B4s-suram%C3%A9rica/" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8A1.5 1.5 0 1 0 6.5 5a1.5 1.5 0 0 0 0 3zM5 9.5h3V19H5zM10 9.5h2.9v1.3h.04c.4-.75 1.4-1.55 2.86-1.55C18.7 9.25 20 10.9 20 13.6V19h-3v-4.8c0-1.15-.02-2.6-1.6-2.6-1.6 0-1.85 1.25-1.85 2.55V19h-3z"/></svg></a>
+          <div class="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-6">
+            <p class="eyebrow text-xs font-semibold uppercase text-goldlt">Síguenos</p>
+            <div class="mt-3 flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/dracossuramerica_/" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.7-.2-.4-.3-.6-.6-.9-.3-.3-.5-.5-.9-.6-.2-.1-.6-.2-1.7-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 7.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zm5.6-7.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></a>
+              <a href="https://www.facebook.com/dracossuramerica" target="_blank" rel="noopener" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+              <a href="https://www.tiktok.com/@dracossuramericaoficial" target="_blank" rel="noopener" aria-label="TikTok" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.77.12V9.77a5.76 5.76 0 0 0-.77-.05 5.66 5.66 0 1 0 5.66 5.66V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.22-1.48z"/></svg></a>
+              <a href="https://www.youtube.com/@dracossuramerica" target="_blank" rel="noopener" aria-label="YouTube" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+              <a href="https://es.pinterest.com/dracosmaquinaria/" target="_blank" rel="noopener" aria-label="Pinterest" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.3-5.4s-.3-.7-.3-1.6c0-1.5.9-2.7 2-2.7.9 0 1.4.7 1.4 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.4-2 3.4-5 0-2.6-1.9-4.4-4.5-4.4a4.7 4.7 0 0 0-4.9 4.7c0 .9.4 1.9.8 2.5.1.1.1.2.1.3l-.3 1.3c-.1.2-.2.3-.4.2-1.4-.7-2.3-2.7-2.3-4.4 0-3.6 2.6-6.9 7.5-6.9 3.9 0 7 2.8 7 6.6 0 3.9-2.5 7-5.9 7-1.2 0-2.3-.6-2.6-1.3l-.7 2.7c-.3 1-1 2.3-1.4 3.1A10 10 0 1 0 12 2z"/></svg></a>
+              <a href="https://www.linkedin.com/company/draco%C2%B4s-suram%C3%A9rica/" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-graphite transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
             </div>
           </div>
         </div>
@@ -852,33 +877,39 @@
     </div>
   </section>
 
-  <!-- ====================== VENTA DE LADRILLOS (discreto) ====================== -->
-  <section id="venta-ladrillos" class="bg-white border-t border-gray-100">
-    <div class="mx-auto max-w-5xl px-5 lg:px-8 py-12 lg:py-14">
-      <div class="rounded-2xl bg-mist/60 ring-1 ring-gray-100 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 reveal">
-        <img src="images/ladrillos-lego.jpg" alt="Ladrillos ecológicos prensados tipo Lego" class="h-24 w-32 shrink-0 rounded-xl object-cover shadow-card" loading="lazy" />
-        <div class="flex-1">
-          <p class="eyebrow text-[11px] font-semibold uppercase text-gray-400">¿Aún no quieres una máquina?</p>
-          <h3 class="mt-2 font-display text-xl font-bold text-graphite">También vendemos ladrillos ecológicos prensados.</h3>
-          <p class="mt-2 text-sm text-gray-600">Si necesitas ladrillos para tu obra sin producirlos tú mismo, consúltanos disponibilidad y precios por unidad o millar.</p>
+  <!-- ====================== VENTA DE LADRILLOS ====================== -->
+  <section id="ladrillos" class="bg-white">
+    <div class="mx-auto max-w-6xl px-5 lg:px-8 py-16 lg:py-20">
+      <div class="rounded-2xl bg-mist ring-1 ring-gold/25 overflow-hidden reveal">
+        <div class="grid md:grid-cols-5 items-stretch">
+          <div class="md:col-span-2 relative min-h-[240px] md:min-h-[300px]">
+            <img src="images/ladrillos-lego.jpg" alt="Ladrillos ecológicos prensados tipo Lego" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+          </div>
+          <div class="md:col-span-3 p-8 lg:p-10 flex flex-col justify-center">
+            <p class="eyebrow text-xs font-semibold uppercase text-gray-400">¿Aún no quieres una máquina?</p>
+            <h2 class="heading-tight mt-2 font-display text-2xl lg:text-3xl font-extrabold">También vendemos ladrillos ecológicos prensados.</h2>
+            <p class="mt-4 text-gray-600">Si necesitas ladrillos para tu obra sin producirlos tú mismo, consúltanos disponibilidad y precios <strong class="text-graphite">por unidad o por millar</strong>.</p>
+            <div class="mt-6">
+              <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20consultar%20disponibilidad%20y%20precios%20de%20ladrillos%20ecol%C3%B3gicos." target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold ring-2 ring-graphite/15 hover:ring-gold hover:bg-cream transition-all">
+                Consultar ladrillos
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <a href="https://wa.me/51979736684?text=Hola%21%20Quiero%20comprar%20ladrillos%20ecol%C3%B3gicos%20(no%20la%20m%C3%A1quina).%20%C2%BFDisponibilidad%20y%20precio%3F" target="_blank" rel="noopener"
-           class="shrink-0 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-graphite ring-1 ring-gray-300 hover:bg-white transition-colors">
-          Consultar ladrillos
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
 
   <!-- ====================== FOOTER ====================== -->
-  <footer class="bg-graphite-deep text-white/60">
+  <footer class="bg-deep text-white/60">
     <div class="mx-auto max-w-7xl px-5 lg:px-8 py-14">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div class="sm:col-span-2">
-          <div class="flex items-center gap-3.5">
+          <div class="flex items-center gap-4">
             <img src="images/logo.png" alt="Draco's Sur América" class="h-16 w-16 object-contain" />
-            <span class="text-white font-display text-xl font-extrabold">DRACO'S <span class="text-brand-gold">Sur América</span></span>
+            <span class="font-display text-2xl font-extrabold text-white">DRACO'S <span class="text-gold">Sur América</span></span>
           </div>
           <p class="mt-5 max-w-sm text-sm">Tecnología e innovación para la construcción civil. Máquinas para fabricar ladrillos ecológicos y concreto, con capacitación y soporte en Perú y Brasil.</p>
         </div>
@@ -886,8 +917,9 @@
           <p class="font-semibold text-white">Navegación</p>
           <ul class="mt-4 space-y-2 text-sm">
             <li><a href="#maquinas" class="link-nav">Máquinas</a></li>
-            <li><a href="#como-funciona" class="link-nav">Cómo funciona</a></li>
             <li><a href="#modelos" class="link-nav">Modelos</a></li>
+            <li><a href="#como-funciona" class="link-nav">Cómo funciona</a></li>
+            <li><a href="#ladrillos" class="link-nav">Ladrillos</a></li>
             <li><a href="#contacto" class="link-nav">Contacto</a></li>
           </ul>
         </div>
@@ -896,13 +928,13 @@
           <ul class="mt-4 space-y-2 text-sm">
             <li><a href="https://wa.me/51979736684" target="_blank" rel="noopener" class="link-nav">Perú: +51 979 736 684</a></li>
             <li><a href="https://wa.me/5511981936423" target="_blank" rel="noopener" class="link-nav">Brasil: +55 11 98193-6423</a></li>
-            <li><a href="mailto:lmondini@dracossuramerica.com" class="link-nav">lmondini@dracossuramerica.com</a></li>
+            <li>lmondini@dracossuramerica.com</li>
           </ul>
         </div>
       </div>
       <div class="mt-12 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
         <p>© 2026 Draco's Sur América. Todos los derechos reservados.</p>
-        <p>Desenvolvido por <a href="https://conceitop.com.br" target="_blank" rel="noopener" class="font-semibold text-white/70 hover:text-brand-gold transition-colors">Conceito Prime</a></p>
+        <p>Desenvolvido por <a href="https://conceitop.com.br" target="_blank" rel="noopener" class="font-semibold text-white/70 hover:text-goldlt transition-colors">Conceito Prime</a></p>
       </div>
     </div>
   </footer>
@@ -910,7 +942,7 @@
   <!-- Floating WhatsApp con opciones por país -->
   <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
     <div id="wa-options" class="hidden flex-col items-end gap-2.5">
-      <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20una%20cotizaci%C3%B3n%20de%20las%20m%C3%A1quinas%20para%20ladrillos." target="_blank" rel="noopener"
+      <a href="https://wa.me/51979736684?text=Hola%21%20Vengo%20del%20sitio%20de%20Draco%27s%20Sur%20Am%C3%A9rica%20y%20quiero%20cotizar%20una%20m%C3%A1quina%20para%20fabricar%20ladrillos." target="_blank" rel="noopener"
          class="group flex items-center gap-2.5 rounded-full bg-white pl-3 pr-4 py-2 shadow-float ring-1 ring-black/5 hover:bg-mist transition-colors">
         <span class="block h-5 w-7 overflow-hidden rounded-[3px] ring-1 ring-black/10"><svg viewBox="0 0 28 20" class="h-full w-full"><rect width="9.33" height="20" fill="#d91023"/><rect x="9.33" width="9.33" height="20" fill="#fff"/><rect x="18.67" width="9.34" height="20" fill="#d91023"/></svg></span>
         <span class="text-sm font-bold text-graphite">Perú</span>
@@ -930,6 +962,20 @@
   </div>
 
   <script>
+    // Rastreamento de cliques no WhatsApp (dataLayer p/ GTM/Google Ads futuro)
+    (function () {
+      window.dataLayer = window.dataLayer || [];
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+        if (!a) return;
+        window.dataLayer.push({
+          event: 'whatsapp_click',
+          wa_location: a.getAttribute('aria-label') || (a.textContent || '').trim().slice(0, 60) || 'link',
+          wa_href: a.href
+        });
+      }, true);
+    })();
+
     // Reveal on scroll
     (function () {
       const els = document.querySelectorAll('.reveal');
@@ -939,6 +985,47 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       els.forEach(e => io.observe(e));
     })();
+
+    // Carrusel genérico — SIEMPRE automático (sin pausa por hover)
+    function initCarousel(rootId, intervalMs) {
+      const root = document.getElementById(rootId);
+      if (!root) return;
+      const slides = Array.from(root.querySelectorAll('[data-slide]'));
+      if (slides.length < 2) return;
+      const dotsBox = root.querySelector('[data-dots]');
+      let i = 0, timer = null;
+      let dots = [];
+      if (dotsBox) {
+        slides.forEach((_, idx) => {
+          const d = document.createElement('button');
+          d.type = 'button';
+          d.setAttribute('aria-label', 'Ir a la imagen ' + (idx + 1));
+          d.addEventListener('click', () => go(idx));
+          dotsBox.appendChild(d);
+        });
+        dots = Array.from(dotsBox.children);
+      }
+      function render() {
+        slides.forEach((s, idx) => {
+          s.classList.toggle('opacity-100', idx === i);
+          s.classList.toggle('opacity-0', idx !== i);
+        });
+        dots.forEach((d, idx) => {
+          d.className = 'h-2 rounded-full transition-all duration-300 ' + (idx === i ? 'bg-white w-5' : 'w-2 bg-white/50 hover:bg-white/80');
+        });
+      }
+      function go(n) { i = (n + slides.length) % slides.length; render(); restart(); }
+      function restart() { if (timer) clearInterval(timer); timer = setInterval(() => go(i + 1), intervalMs); }
+      const prev = root.querySelector('[data-prev]');
+      const next = root.querySelector('[data-next]');
+      if (prev) prev.addEventListener('click', () => go(i - 1));
+      if (next) next.addEventListener('click', () => go(i + 1));
+      render();
+      restart();
+    }
+    initCarousel('hero-carousel', 4500);
+    initCarousel('nos-carousel', 5000);
+    initCarousel('maq-carousel', 3500);
 
     // Botón flotante de WhatsApp con opciones por país
     (function () {
@@ -960,41 +1047,6 @@
       fab.addEventListener('click', (e) => { e.stopPropagation(); set(!open); });
       document.addEventListener('click', (e) => { if (open && !opts.contains(e.target) && !fab.contains(e.target)) set(false); });
       opts.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
-    })();
-
-    // Carrusel de la sección Nosotros
-    (function () {
-      const root = document.getElementById('nos-carousel');
-      if (!root) return;
-      const slides = Array.from(root.querySelectorAll('.nos-slide'));
-      const dotsBox = root.querySelector('.nos-dots');
-      let i = 0, timer = null;
-      slides.forEach((_, idx) => {
-        const d = document.createElement('button');
-        d.type = 'button';
-        d.setAttribute('aria-label', 'Ir a la imagen ' + (idx + 1));
-        d.className = 'h-2 w-2 rounded-full transition-all duration-300 ' + (idx === 0 ? 'bg-white w-5' : 'bg-white/50 hover:bg-white/80');
-        d.addEventListener('click', () => go(idx, true));
-        dotsBox.appendChild(d);
-      });
-      const dots = Array.from(dotsBox.children);
-      function render() {
-        slides.forEach((s, idx) => {
-          s.classList.toggle('opacity-100', idx === i);
-          s.classList.toggle('opacity-0', idx !== i);
-        });
-        dots.forEach((d, idx) => {
-          d.className = 'h-2 rounded-full transition-all duration-300 ' + (idx === i ? 'bg-white w-5' : 'w-2 bg-white/50 hover:bg-white/80');
-        });
-      }
-      function go(n, user) { i = (n + slides.length) % slides.length; render(); if (user) restart(); }
-      function next() { go(i + 1); }
-      function restart() { if (timer) clearInterval(timer); timer = setInterval(next, 5000); }
-      root.querySelector('.nos-next').addEventListener('click', () => go(i + 1, true));
-      root.querySelector('.nos-prev').addEventListener('click', () => go(i - 1, true));
-      root.addEventListener('mouseenter', () => timer && clearInterval(timer));
-      root.addEventListener('mouseleave', restart);
-      restart();
     })();
   </script>
 </body>
