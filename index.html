@@ -549,8 +549,36 @@
         <div class="reveal order-1">
           <div class="relative mx-auto max-w-lg">
             <div class="absolute -inset-3 rounded-3xl bg-graphite/5"></div>
-            <img src="images/fabrica-real.jpeg" alt="Equipo de Draco's Sur América con distintos modelos de ladrillos ecológicos" class="relative w-full rounded-2xl object-cover shadow-card" loading="lazy" />
-            <span class="absolute bottom-4 left-4 rounded-full bg-white/95 backdrop-blur px-4 py-2 text-sm font-semibold text-graphite shadow-card">Equipo Draco's · fabricación propia</span>
+            <div id="nos-carousel" class="group relative rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-graphite ring-1 ring-black/5">
+              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-100">
+                <img src="images/fabrica-real.jpeg" alt="Equipo de Draco's Sur América con distintos modelos de ladrillos ecológicos" class="h-full w-full object-cover" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Equipo Draco's · fabricación propia</figcaption>
+              </figure>
+              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                <img src="images/expo-patenta.jpeg" alt="Ing. Esgard Salcedo en la Expo Patenta INDECOPI 2019" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Expo Patenta · INDECOPI 2019</figcaption>
+              </figure>
+              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                <img src="images/conferencia-cajamarca.jpeg" alt="Conferencia en el Gobierno Regional de Cajamarca" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Conferencia · Gobierno Regional de Cajamarca</figcaption>
+              </figure>
+              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                <img src="images/excon-capeco.jpeg" alt="Draco's presente en EXCON, organizada por CAPECO 2021" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">EXCON · CAPECO 2021</figcaption>
+              </figure>
+              <figure class="nos-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                <img src="images/expo-inventos.jpeg" alt="Stand de Draco's Sur América en la Expo de Inventos 2019" class="h-full w-full object-cover" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pt-12 pb-4 text-sm font-semibold text-white">Expo de Inventos 2019</figcaption>
+              </figure>
+
+              <button type="button" class="nos-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-white" aria-label="Imagen anterior">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="nos-next absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-graphite shadow-card opacity-80 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-white" aria-label="Siguiente imagen">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <div class="nos-dots absolute bottom-4 right-4 z-10 flex gap-1.5"></div>
+            </div>
           </div>
         </div>
         <div class="reveal order-2">
@@ -932,6 +960,41 @@
       fab.addEventListener('click', (e) => { e.stopPropagation(); set(!open); });
       document.addEventListener('click', (e) => { if (open && !opts.contains(e.target) && !fab.contains(e.target)) set(false); });
       opts.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+    })();
+
+    // Carrusel de la sección Nosotros
+    (function () {
+      const root = document.getElementById('nos-carousel');
+      if (!root) return;
+      const slides = Array.from(root.querySelectorAll('.nos-slide'));
+      const dotsBox = root.querySelector('.nos-dots');
+      let i = 0, timer = null;
+      slides.forEach((_, idx) => {
+        const d = document.createElement('button');
+        d.type = 'button';
+        d.setAttribute('aria-label', 'Ir a la imagen ' + (idx + 1));
+        d.className = 'h-2 w-2 rounded-full transition-all duration-300 ' + (idx === 0 ? 'bg-white w-5' : 'bg-white/50 hover:bg-white/80');
+        d.addEventListener('click', () => go(idx, true));
+        dotsBox.appendChild(d);
+      });
+      const dots = Array.from(dotsBox.children);
+      function render() {
+        slides.forEach((s, idx) => {
+          s.classList.toggle('opacity-100', idx === i);
+          s.classList.toggle('opacity-0', idx !== i);
+        });
+        dots.forEach((d, idx) => {
+          d.className = 'h-2 rounded-full transition-all duration-300 ' + (idx === i ? 'bg-white w-5' : 'w-2 bg-white/50 hover:bg-white/80');
+        });
+      }
+      function go(n, user) { i = (n + slides.length) % slides.length; render(); if (user) restart(); }
+      function next() { go(i + 1); }
+      function restart() { if (timer) clearInterval(timer); timer = setInterval(next, 5000); }
+      root.querySelector('.nos-next').addEventListener('click', () => go(i + 1, true));
+      root.querySelector('.nos-prev').addEventListener('click', () => go(i - 1, true));
+      root.addEventListener('mouseenter', () => timer && clearInterval(timer));
+      root.addEventListener('mouseleave', restart);
+      restart();
     })();
   </script>
 </body>
