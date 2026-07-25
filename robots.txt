@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dracossuramerica.com/sitemap.xml
+Sitemap: https://maquinas.dracossuramerica.com/sitemap.xml
