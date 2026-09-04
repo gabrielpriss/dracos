@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Draco's Sur América — Formulario de cotización con identidad de WhatsApp
+   Se abre en lugar del envío directo a WhatsApp (reunión 11/08/2026).
+   ========================================================================== */
+
+#dlf-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  background: rgba(23, 17, 5, 0.68);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+#dlf-overlay.dlf-visible { display: flex; }
+#dlf-overlay.dlf-in { opacity: 1; }
+
+@media (min-width: 640px) {
+  #dlf-overlay { align-items: center; padding: 24px; }
+}
+
+.dlf-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  max-height: 92vh;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #ece5dd;
+  box-shadow: 0 24px 70px -14px rgba(23, 17, 5, 0.55);
+  transform: translateY(22px);
+  transition: transform 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+#dlf-overlay.dlf-in .dlf-panel { transform: translateY(0); }
+
+@media (min-width: 640px) {
+  .dlf-panel { border-radius: 20px; max-height: 86vh; }
+}
+
+/* ---------- Cabecera estilo WhatsApp ---------- */
+.dlf-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  background: linear-gradient(140deg, #128c4b, #0d6b39 92%);
+}
+.dlf-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+.dlf-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.dlf-head-txt { min-width: 0; flex: 1 1 auto; }
+.dlf-head-name {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dlf-head-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.dlf-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #6ff09b;
+  box-shadow: 0 0 0 0 rgba(111, 240, 155, 0.7);
+  animation: dlf-pulse 2s infinite;
+}
+@keyframes dlf-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(111, 240, 155, 0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(111, 240, 155, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(111, 240, 155, 0); }
+}
+.dlf-close {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dlf-close:hover { background: rgba(255, 255, 255, 0.24); }
+
+/* ---------- Barra de progreso ---------- */
+.dlf-progress { height: 3px; background: rgba(0, 0, 0, 0.08); }
+.dlf-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2bdb70, #128c4b);
+  transition: width 0.3s ease;
+}
+
+/* ---------- Conversación ---------- */
+.dlf-chat {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 16px 14px 18px;
+  background-color: #ece5dd;
+  background-image:
+    radial-gradient(rgba(33, 27, 16, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(33, 27, 16, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px, 22px 22px;
+  background-position: 0 0, 11px 11px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dlf-row { display: flex; margin-bottom: 8px; }
+.dlf-row.dlf-out { justify-content: flex-end; }
+
+.dlf-bubble {
+  position: relative;
+  max-width: 84%;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #211b10;
+  box-shadow: 0 1px 1px rgba(33, 27, 16, 0.14);
+  animation: dlf-pop 0.22s ease-out;
+}
+.dlf-in-bubble { background: #fff; border-top-left-radius: 4px; }
+.dlf-out-bubble { background: #d7fdc7; border-top-right-radius: 4px; }
+
+@keyframes dlf-pop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dlf-time {
+  display: block;
+  margin-top: 3px;
+  font-size: 10.5px;
+  text-align: right;
+  color: rgba(33, 27, 16, 0.42);
+}
+
+/* Indicador "escribiendo…" */
+.dlf-typing { display: inline-flex; gap: 4px; padding: 3px 2px; }
+.dlf-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(33, 27, 16, 0.34);
+  animation: dlf-blink 1.3s infinite ease-in-out;
+}
+.dlf-typing span:nth-child(2) { animation-delay: 0.18s; }
+.dlf-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes dlf-blink {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ---------- Opciones ---------- */
+.dlf-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 4px auto;
+  width: 100%;
+  max-width: 88%;
+}
+.dlf-opt {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #128c4b;
+  border-radius: 12px;
+  background: #fff;
+  color: #0d6b39;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.dlf-opt:hover { background: #eafbf1; transform: translateY(-1px); box-shadow: 0 6px 16px -8px rgba(18, 140, 75, 0.55); }
+.dlf-opt:active { transform: translateY(0); }
+
+.dlf-back {
+  margin: 6px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(33, 27, 16, 0.5);
+  font-family: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.dlf-back:hover { color: #128c4b; }
+
+/* ---------- Formulario de contacto ---------- */
+.dlf-form { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 4px; }
+.dlf-field { display: flex; flex-direction: column; gap: 4px; }
+.dlf-label { font-size: 12px; font-weight: 600; color: rgba(33, 27, 16, 0.62); }
+.dlf-input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid rgba(33, 27, 16, 0.14);
+  border-radius: 12px;
+  background: #fff;
+  color: #211b10;
+  font-family: inherit;
+  font-size: 15px; /* 16px-ish evita zoom en iOS al enfocar */
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.dlf-input:focus { border-color: #128c4b; box-shadow: 0 0 0 3px rgba(18, 140, 75, 0.14); }
+.dlf-input.dlf-error { border-color: #a81c28; box-shadow: 0 0 0 3px rgba(168, 28, 40, 0.12); }
+select.dlf-input { appearance: none; background-image: none; }
+
+.dlf-msg { font-size: 12px; color: #a81c28; min-height: 0; }
+
+.dlf-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 2px;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 14px;
+  color: #fff;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(140deg, #2bdb70, #128c4b 90%);
+  box-shadow: 0 12px 30px -10px rgba(18, 140, 75, 0.6);
+  transition: transform 0.22s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.22s, opacity 0.2s;
+}
+.dlf-submit:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(18, 140, 75, 0.7); }
+.dlf-submit[disabled] { opacity: 0.65; cursor: default; transform: none; }
+
+.dlf-legal {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(33, 27, 16, 0.48);
+}
+
+/* ---------- Resumen del modelo preseleccionado ---------- */
+.dlf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(18, 140, 75, 0.1);
+  color: #0d6b39;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- Éxito ---------- */
+.dlf-success { text-align: center; padding: 10px 6px 4px; }
+.dlf-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(140deg, #2bdb70, #128c4b 90%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dlf-overlay, .dlf-panel, .dlf-bubble, .dlf-opt, .dlf-submit { transition: none; animation: none; }
+  .dlf-dot, .dlf-typing span { animation: none; }
+}
