@@ -16,7 +16,7 @@
     // URL del Web App de Google Apps Script (ver apps-script/Codigo.gs).
     // Mientras esté vacía, el formulario sigue funcionando y abre WhatsApp,
     // pero el lead NO se escribe en la planilla.
-    endpoint: '',
+    endpoint: 'https://script.google.com/macros/s/AKfycbyQCgT_m-ohXQiX_aDcucgfwWrMj-KeJtLAiMtbY9gOAQZL_p7XMJVGCd64gAbcBLWe/exec',
     // Debe coincidir con TOKEN en apps-script/Codigo.gs.
     token: 'dracos-lp',
     whatsapp: '5511981936423',
