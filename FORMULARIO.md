@@ -87,8 +87,28 @@ ajusta canonical, `noindex` e o seletor de idioma para continuar dentro de `/for
 
 ## Ativar a gravação no CRM
 
-Enquanto `CONFIG.endpoint` estiver vazio o formulário funciona e abre o WhatsApp,
-mas **não grava na planilha**. Para ligar:
+**Já está ligado** desde 05/09/2026. O Apps Script vive dentro da própria planilha
+(projeto "Receptor de leads da LP /form (Conceito Prime)"), o App da Web está
+publicado executando como `feedxe321@gmail.com` com acesso "qualquer pessoa", e a
+URL do `/exec` já está em `CONFIG.endpoint`, em
+[`assets/lead-form.js`](assets/lead-form.js).
+
+Cada envio grava duas linhas: a comercial na aba **LEADS** e a técnica na aba
+**LOG LP**, com `STATUS DA GRAVAÇÃO` e `LINHA NA ABA`. Quando um lead não aparecer
+na LEADS, o motivo está na LOG LP.
+
+> **Ao mexer no `Codigo.gs`, gerar sempre uma nova versão da implantação**
+> (Implantar → Gerenciar implantações → lápis → Versão: Nova versão). Salvar o
+> código não muda o que o App da Web executa. Editando a implantação existente a
+> URL continua a mesma; criando uma implantação nova, a URL muda e o
+> `CONFIG.endpoint` precisa ser atualizado junto.
+
+> **A planilha é pesada** (RESUMO, SIMULAÇÃO e CENÁRIOS recalculam a cada escrita).
+> Toda leitura no `Codigo.gs` tem que ser em bloco (`getValues`). A versão antiga
+> procurava a primeira linha livre lendo célula a célula num laço e estourava o
+> limite de 6 minutos do Apps Script: nenhum lead entrava.
+
+Se um dia precisar refazer a implantação do zero:
 
 1. Abrir a planilha → *Extensões → Apps Script*.
 2. Colar o conteúdo de [`apps-script/Codigo.gs`](apps-script/Codigo.gs).
