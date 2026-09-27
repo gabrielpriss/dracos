@@ -4,10 +4,12 @@ A LP existe agora em **duas versões**, no mesmo domínio:
 
 | URL | CTAs vão para | Uso |
 | --- | --- | --- |
-| `maquinas.dracossuramerica.com/` · `/pt/` | **WhatsApp direto** | página principal, indexada |
+| `maquinas.dracossuramerica.com/` · `/pt/` | **formulário** → CRM → WhatsApp (desde 27/09/2026) | página principal, indexada |
 | `maquinas.dracossuramerica.com/form/` · `/form/pt/` | **formulário** → CRM → WhatsApp | destino das campanhas de Google e Meta |
 
-Mesmo conteúdo, mesma copy, mesmas imagens — muda só o destino do clique. A
+Mesmo conteúdo, mesma copy, mesmas imagens. Até 26/09/2026 a raiz levava direto
+para o WhatsApp; desde 27/09/2026 **nenhum CTA usa o wa.me direto**, nas duas
+versões todo clique abre o formulário e o WhatsApp só abre depois do envio. A
 versão `/form` é `noindex,follow` e fica fora do sitemap, para não competir com a
 principal na busca orgânica. A coluna **PÁGINA** no CRM grava `/form/` ou
 `/form/pt/`, então dá para comparar as duas na planilha.
@@ -68,7 +70,7 @@ reclamação que a Laila trouxe na reunião.
 
 | Arquivo | O quê |
 | --- | --- |
-| `index.html` · `pt/index.html` | LP principal — **não tem formulário**, CTAs vão direto para o WhatsApp |
+| `index.html` · `pt/index.html` | LP principal, **com formulário** (os atributos `data-lead-*` e o CSS/JS são aplicados pelo `build-form.mjs`) |
 | `build-form.mjs` | gera as páginas de `/form` a partir das principais |
 | `form/index.html` · `form/pt/index.html` | **gerados** — não editar à mão |
 | `assets/lead-form.js` · `.css` | o formulário |
@@ -80,7 +82,8 @@ Para regerar depois de mexer na LP:
 node build-form.mjs
 ```
 
-O script marca cada CTA de WhatsApp com a resposta que o formulário já deve trazer
+O script primeiro prepara a própria raiz (é idempotente, rodar de novo não
+duplica nada) e depois gera `/form`. Ele marca cada CTA de WhatsApp com a resposta que o formulário já deve trazer
 pronta (22 dos 24 — os 2 restantes são o número de telefone no rodapé, que abre o
 formulário em branco), tira o `whatsapp_click` antigo, injeta o CSS e o JS, e
 ajusta canonical, `noindex` e o seletor de idioma para continuar dentro de `/form`.
@@ -186,12 +189,60 @@ A conversão do Google Ads e do Meta deve passar a usar **`generate_lead`**. O
 página — ele contava cliques, não contatos, e era a diferença entre o relatório e
 o que chegava no WhatsApp da Laila.
 
+### Sufixo aplicado no Google Ads (27/09/2026)
+
+O sufixo de URL final foi aplicado **no nível da campanha**, com este formato:
+
+```
+utm_source=Google&utm_medium=cpc&utm_campaign={campaignid}&utm_content={adgroupid}&utm_term={keyword}&keyword={keyword}&matchtype={matchtype}&network={network}&device={device}
+```
+
+## Alterações de 27/09/2026
+
+Motivo: a Laila reclamou da qualidade dos leads (muita gente sem capital, curiosa
+ou em fase muito inicial). As mudanças qualificam melhor antes do contato sem
+deixar o formulário chato.
+
+| Arquivo | O que mudou |
+| --- | --- |
+| `index.html` · `pt/index.html` | Todos os CTAs abrem o formulário (antes iam direto ao WhatsApp); o `whatsapp_click` antigo saiu, quem dispara agora é o formulário |
+| `index.html` · `pt/index.html` | Linha Súper Econômica: "empezar a producir tu propio ladrillo con poca inversión" virou "la línea de entrada para montar tu fábrica y empezar a vender ladrillo" (PT equivalente) |
+| `index.html` · `pt/index.html` | Nova seção `#bloques-adoquines` perto do fim da página, com os blocos `#bloques` e `#adoquines` (mesma prensa, troca de matriz em cerca de 25 minutos, sem números de produção). CTAs com `data-lead-origen="Bloques"` / `"Adoquines"` |
+| `index.html` · `pt/index.html` | Âncora de preço "Inversión desde S/ [VALOR]" pronta em 4 lugares (hero, cabeçalho da Línea Súper Económica, comparativa `#modelos` e pergunta nova no FAQ), **comentada** com `<!-- PRECO_ENTRADA pendente -->` até termos o valor |
+| `assets/lead-form.js` | Rótulos das faixas sem travessão; a mensagem do WhatsApp usa o rótulo e não o valor bruto do CRM. Valores `v` intactos |
+| `build-form.mjs` | Passa a aplicar o formulário também na raiz, de forma idempotente |
+
+Decisões que ficaram diferentes do pedido original:
+
+- A seção `#ladrillos` (venda de tijolos e obra) **foi mantida**. A opção
+  "Comprar ladrillos" do formulário continua como filtro.
+- Os blocos de bloques e adoquines ficaram numa seção própria **no fim da
+  página**, e não dentro de `#productos`: conteúdo que serve para relevância do
+  Google não entra no começo da LP.
+- Ainda não há foto de bloque nem de adoquín. Reaproveitamos
+  `modelos-ladrillos.jpg` e `ladrillo-macizo.jpg`; trocar quando o cliente mandar.
+
+Para ligar a âncora de preço: procurar `PRECO_ENTRADA pendente` em
+`index.html` e `pt/index.html`, trocar `[VALOR]`, tirar o comentário e rodar
+`node build-form.mjs`.
+
+**Teste do link do WhatsApp.** Não conseguimos reproduzir aqui a quebra do
+`wa.me` com WhatsApp Business (só dá para confirmar num celular sem o WhatsApp
+comum instalado). Mantivemos `wa.me` no redirecionamento depois do envio. Os
+`href` dos botões continuam em `wa.me` só como reserva para navegador sem
+JavaScript; o clique é interceptado e abre o formulário. Se a Laila confirmar o
+problema, basta trocar o retorno de `waUrl()` para
+`https://api.whatsapp.com/send?phone=...&text=...`: o seletor do `init()` já
+aceita os dois formatos.
+
 ## Pontos a resolver com o cliente / na conta
 
-1. **Domínio das campanhas.** A aba de UTMs da planilha ainda aponta para
-   `lp.dracossuramerica.com/maquina-ladrillos`. Trocar para
-   `https://maquinas.dracossuramerica.com/form/` — senão os anúncios continuam
-   levando para a LP antiga e nada disso entra em uso.
+1. **Domínio das campanhas.** Confirmado em 27/09/2026: **o Meta ainda aponta
+   para a LP antiga** (`lp.dracossuramerica.com/maquina-ladrillos`). Trocar para
+   `https://maquinas.dracossuramerica.com/form/`, senão os anúncios do Meta
+   continuam levando para a LP antiga e os leads não entram no CRM por aqui. A
+   campanha otimiza pelo evento Lead do pixel: antes de trocar, conferir no GTM
+   (`GTM-WM4T2Q42`) se o pixel carrega na `/form/` e se o envio gera um Lead.
 2. **`{utm_source}` literal.** Vários leads de abril/26 chegaram com
    `{utm_source}`, `{utm_campaign}`, `{utm_content}`, `{utm_term}` escritos como
    texto: a macro usada não existe. Também há 5 linhas com `meta-{{placement}}` sem
@@ -203,6 +254,21 @@ o que chegava no WhatsApp da Laila.
    formulário sem resposta pronta e a origem fica em OBSERVAÇÕES (`CTA: Servicio de
    construcción`). Se a Dracos quiser esse funil separado, dá para virar um quarto
    valor — mas aí precisa de mais uma linha na aba de resumo.
+
+5. **Nova faixa de investimento (preparado, não aplicado).** 77% dos leads
+   marcam `Hasta S/ 26,000`, faixa que mistura quem tem S/ 25 mil com quem tem
+   S/ 2 mil. Quando tivermos o preço de entrada da Súper Económica I, a ideia é
+   abrir uma faixa abaixo dele. O que precisa mudar:
+   - em `T.invertir` (ES e PT), incluir antes das outras uma opção nova, por
+     exemplo `v: 'Menos de S/ [VALOR] – Todavía no tengo el capital'` com rótulo
+     "Menos de S/ [VALOR]: todavía no tengo el capital";
+   - a faixa `Hasta S/ 26,000 – Fabrica 800 ladrillos/día` passa a ser, na
+     prática, "De S/ [VALOR] a S/ 26,000". Se o texto do `v` mudar, as linhas
+     antigas deixam de bater: melhor manter o `v` antigo e mudar só o rótulo;
+   - na planilha, criar a linha do valor novo na aba **RESUMO** (e em
+     SIMULAÇÃO/CENÁRIOS, se contarem as faixas) e conferir a validação de dados
+     da coluna DISPOSTO A INVESTIR;
+   - o `Codigo.gs` não precisa mudar, ele grava o valor que recebe.
 
 ## Mexer nas perguntas depois
 

@@ -1,14 +1,20 @@
 /**
- * Gera as páginas /form/ e /form/pt/ a partir das páginas principais.
+ * Prepara a LP principal e gera as páginas /form/ e /form/pt/ a partir dela.
  *
  *   node build-form.mjs
  *
- * A raiz (maquinas.dracossuramerica.com/) continua com os CTAs indo direto para
- * o WhatsApp. A versão /form é idêntica em conteúdo, mas todo CTA abre o
- * formulário de cotação, que grava no CRM antes de abrir a conversa.
+ * Desde 27/09/2026 nenhum CTA da LP vai direto para o WhatsApp: tanto a raiz
+ * (maquinas.dracossuramerica.com/ e /pt/) quanto /form abrem o formulário de
+ * cotação, que grava no CRM e só depois abre a conversa. Por isso o script faz
+ * duas coisas:
  *
- * Sempre que a LP principal mudar, rode este script de novo para as duas
- * versões não se descolarem. Não edite form/index.html à mão.
+ *   1. na raiz (index.html e pt/index.html), marca cada CTA de WhatsApp com a
+ *      resposta pronta, remove o whatsapp_click antigo e inclui o CSS/JS do
+ *      formulário. É idempotente: rodar de novo não duplica nada;
+ *   2. gera /form a partir da raiz, só trocando caminhos, canonical e noindex.
+ *
+ * Sempre que a LP principal mudar, rode este script de novo para as versões não
+ * se descolarem. Não edite form/index.html à mão.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -73,14 +79,11 @@ function classificar(texto, lang) {
   return { alvo: '', modelo: '' };
 }
 
-function transformar(html, { lang, url }) {
+/** Passos que valem para a raiz e para /form: CTA abre o formulário. */
+function prepararHome(html, lang) {
   let s = html;
 
-  // 1. Caminhos absolutos: /form/ e /form/pt/ estão em outra profundidade.
-  s = s.replace(/(src|href)="images\//g, '$1="/images/');
-  s = s.replace(/(src|href)="\.\.\/images\//g, '$1="/images/');
-
-  // 2. Cada CTA de WhatsApp abre o formulário, com a resposta já preenchida.
+  // Cada CTA de WhatsApp abre o formulário, com a resposta já preenchida.
   let marcados = 0;
   s = s.replace(/<a\s[^>]*href="(https:\/\/wa\.me\/[^"]*)"[^>]*>/g, (tag, href) => {
     if (tag.includes('data-lead-')) return tag;
@@ -96,37 +99,55 @@ function transformar(html, { lang, url }) {
     return tag.slice(0, -1) + extra + '>';
   });
 
-  // 3. O whatsapp_click antigo disparava em qualquer clique de link. Agora quem
-  //    dispara é o formulário, no momento em que o WhatsApp abre de fato.
+  // O whatsapp_click antigo disparava em qualquer clique de link. Agora quem
+  // dispara é o formulário, no momento em que o WhatsApp abre de fato.
   s = s.replace(/\n    \/\/ Rastreamento de cliques no WhatsApp[\s\S]*?\n    \}\)\(\);\n/, '\n');
 
-  // 4. Assets do formulário.
-  s = s.replace('  <style>\n', '  <link rel="stylesheet" href="/assets/lead-form.css" />\n\n  <style>\n');
-  s = s.replace('</body>', '  <script src="/assets/lead-form.js" defer></script>\n</body>');
+  // Assets do formulário (caminho absoluto: serve para a raiz e para /form).
+  if (!s.includes('/assets/lead-form.css')) {
+    s = s.replace('  <style>\n', '  <link rel="stylesheet" href="/assets/lead-form.css" />\n\n  <style>\n');
+  }
+  if (!s.includes('/assets/lead-form.js')) {
+    s = s.replace('</body>', '  <script src="/assets/lead-form.js" defer></script>\n</body>');
+  }
 
-  // 5. Página de campanha: fora do índice, para não competir com a LP principal.
+  return { html: s, marcados };
+}
+
+function transformar(html, { lang, url }) {
+  let s = html;
+
+  // Caminhos absolutos: /form/ e /form/pt/ estão em outra profundidade.
+  s = s.replace(/(src|href)="images\//g, '$1="/images/');
+  s = s.replace(/(src|href)="\.\.\/images\//g, '$1="/images/');
+
+  // Página de campanha: fora do índice, para não competir com a LP principal.
   s = s.replace('  <title>', '  <meta name="robots" content="noindex,follow" />\n  <title>');
   s = s.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`);
   s = s.replace(/\n  <link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, '');
   s = s.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`);
   s = s.replace(/\n  <script type="application\/ld\+json">[\s\S]*?<\/script>\n/, '\n');
 
-  // 6. O seletor de idioma continua dentro de /form.
+  // O seletor de idioma continua dentro de /form.
   s = lang === 'es'
     ? s.replace('href="/pt/" id="lang-to-pt"', 'href="/form/pt/" id="lang-to-pt"')
     : s.replace('href="/" id="lang-to-es"', 'href="/form/" id="lang-to-es"');
 
-  return { html: s, marcados };
+  return { html: s };
 }
 
 for (const pagina of PAGINAS) {
-  const origem = await readFile(join(raiz, pagina.origem), 'utf8');
-  const { html, marcados } = transformar(origem, pagina);
+  const original = await readFile(join(raiz, pagina.origem), 'utf8');
+  const { html: home, marcados } = prepararHome(original, pagina.lang);
+  if (home !== original) await writeFile(join(raiz, pagina.origem), home, 'utf8');
+
+  const { html } = transformar(home, pagina);
   await mkdir(dirname(join(raiz, pagina.destino)), { recursive: true });
   await writeFile(join(raiz, pagina.destino), html, 'utf8');
 
-  const total = (origem.match(/href="https:\/\/wa\.me\//g) || []).length;
-  console.log(`${pagina.destino}: ${marcados}/${total} CTAs com resposta pronta`);
+  const total = (home.match(/href="https:\/\/wa\.me\//g) || []).length;
+  const comResposta = (home.match(/<a\s[^>]*href="https:\/\/wa\.me\/[^"]*"[^>]*data-lead-/g) || []).length;
+  console.log(`${pagina.origem} e ${pagina.destino}: ${comResposta}/${total} CTAs com resposta pronta (${marcados} marcados agora)`);
 }
 
-console.log('\nPronto. A raiz continua com WhatsApp direto; /form abre o formulário.');
+console.log('\nPronto. Raiz e /form abrem o formulário em todos os CTAs de WhatsApp.');

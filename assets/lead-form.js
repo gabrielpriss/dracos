@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Draco's Sur América — Formulario de cotización (ES / PT-BR)
+   Draco's Sur América · Formulario de cotización (ES / PT-BR)
    --------------------------------------------------------------------------
    Sustituye el envío directo a WhatsApp por un formulario corto con identidad
    visual de WhatsApp. Al enviar:
@@ -67,9 +67,9 @@
       { v: 'Solo más información', l: 'Só quero mais informações' }
     ],
     invertir: [
-      { v: 'Hasta S/ 26,000 – Fabrica 800 ladrillos/día', l: 'Até S/ 26.000 — fabrica 800 tijolos/dia' },
-      { v: 'De S/ 26,000 a S/ 70,000 – Fabrica 2,000 ladrillos/día', l: 'De S/ 26.000 a S/ 70.000 — fabrica 2.000 tijolos/dia' },
-      { v: 'Más de S/ 70,000 – Personaliza tu fábrica', l: 'Mais de S/ 70.000 — fábrica personalizada' }
+      { v: 'Hasta S/ 26,000 – Fabrica 800 ladrillos/día', l: 'Até S/ 26.000: fabrica 800 tijolos/dia' },
+      { v: 'De S/ 26,000 a S/ 70,000 – Fabrica 2,000 ladrillos/día', l: 'De S/ 26.000 a S/ 70.000: fabrica 2.000 tijolos/dia' },
+      { v: 'Más de S/ 70,000 – Personaliza tu fábrica', l: 'Mais de S/ 70.000: fábrica personalizada' }
     ],
     cantidad: [
       { v: 'Hasta 5,000 ladrillos', l: 'Até 5.000 tijolos' },
@@ -122,9 +122,9 @@
       { v: 'Solo más información', l: 'Solo más información' }
     ],
     invertir: [
-      { v: 'Hasta S/ 26,000 – Fabrica 800 ladrillos/día', l: 'Hasta S/ 26,000 — fabrica 800 ladrillos/día' },
-      { v: 'De S/ 26,000 a S/ 70,000 – Fabrica 2,000 ladrillos/día', l: 'De S/ 26,000 a S/ 70,000 — fabrica 2,000 ladrillos/día' },
-      { v: 'Más de S/ 70,000 – Personaliza tu fábrica', l: 'Más de S/ 70,000 — personaliza tu fábrica' }
+      { v: 'Hasta S/ 26,000 – Fabrica 800 ladrillos/día', l: 'Hasta S/ 26,000: fabrica 800 ladrillos/día' },
+      { v: 'De S/ 26,000 a S/ 70,000 – Fabrica 2,000 ladrillos/día', l: 'De S/ 26,000 a S/ 70,000: fabrica 2,000 ladrillos/día' },
+      { v: 'Más de S/ 70,000 – Personaliza tu fábrica', l: 'Más de S/ 70,000: personaliza tu fábrica' }
     ],
     cantidad: [
       { v: 'Hasta 5,000 ladrillos', l: 'Hasta 5,000 ladrillos' },
@@ -466,7 +466,7 @@
     });
   }
 
-  // Solo el camino de la máquina recibe la pregunta de inversión — es la que el
+  // Solo el camino de la máquina recibe la pregunta de inversión: es la que el
   // CRM ya usa para calificar. Quien pide "solo más información" va directo al
   // contacto: la Laila pidió el camino más corto posible.
   function depoisDeBuscando() {
@@ -642,10 +642,16 @@
     var parts = [T.wa_intro.replace('{nome}', lead.nome).replace('{pais}', lead.pais)];
     parts.push(L.busca + ': ' + (T.wa_busca[lead.buscando] || lead.buscando) + '.');
     if (lead.modelo) parts.push(L.modelo + ': ' + lead.modelo + '.');
-    if (lead.invertir) parts.push(L.invertir + ': ' + lead.invertir + '.');
-    if (lead.cantidad) parts.push(L.cantidad + ': ' + lead.cantidad + '.');
+    // Na mensagem vai o rótulo (l), não o valor gravado no CRM (v).
+    if (lead.invertir) parts.push(L.invertir + ': ' + rotulo(T.invertir, lead.invertir) + '.');
+    if (lead.cantidad) parts.push(L.cantidad + ': ' + rotulo(T.cantidad, lead.cantidad) + '.');
     parts.push(T.wa_end);
     return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(parts.join(' '));
+  }
+
+  function rotulo(lista, v) {
+    for (var i = 0; i < lista.length; i++) if (lista[i].v === v) return lista[i].l;
+    return v;
   }
 
   function openWhats(url) {
