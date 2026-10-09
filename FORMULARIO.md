@@ -210,6 +210,7 @@ deixar o formulário chato.
 | `index.html` · `pt/index.html` | Nova seção `#bloques-adoquines` perto do fim da página, com os blocos `#bloques` e `#adoquines` (mesma prensa, troca de matriz em cerca de 25 minutos, sem números de produção). CTAs com `data-lead-origen="Bloques"` / `"Adoquines"` |
 | `index.html` · `pt/index.html` | Âncora de preço "Inversión desde S/ [VALOR]" pronta em 4 lugares (hero, cabeçalho da Línea Súper Económica, comparativa `#modelos` e pergunta nova no FAQ), **comentada** com `<!-- PRECO_ENTRADA pendente -->` até termos o valor |
 | `assets/lead-form.js` | Rótulos das faixas sem travessão; a mensagem do WhatsApp usa o rótulo e não o valor bruto do CRM. Valores `v` intactos |
+| `assets/lead-form.js` | (09/10/2026) O modelo saiu da mensagem do WhatsApp, que agora leva só busca e investimento. O lead podia escolher Súper Económica III e marcar a faixa da I, e a mensagem chegava contraditória. O modelo segue gravado no CRM |
 | `build-form.mjs` | Passa a aplicar o formulário também na raiz, de forma idempotente |
 
 Decisões que ficaram diferentes do pedido original:

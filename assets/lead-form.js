@@ -78,7 +78,7 @@
       { v: 'Todavía no lo sé', l: 'Ainda não sei' }
     ],
     wa_intro: 'Olá! Sou {nome}, de {pais}.',
-    wa_labels: { busca: 'Procuro', modelo: 'Modelo', invertir: 'Investimento', cantidad: 'Quantidade' },
+    wa_labels: { busca: 'Procuro', invertir: 'Investimento', cantidad: 'Quantidade' },
     wa_busca: {
       'Máquina para fabricar ladrillos': 'uma máquina para fabricar tijolos',
       'Comprar ladrillos': 'comprar tijolos',
@@ -133,7 +133,7 @@
       { v: 'Todavía no lo sé', l: 'Todavía no lo sé' }
     ],
     wa_intro: '¡Hola! Soy {nome}, de {pais}.',
-    wa_labels: { busca: 'Busco', modelo: 'Modelo', invertir: 'Inversión', cantidad: 'Cantidad' },
+    wa_labels: { busca: 'Busco', invertir: 'Inversión', cantidad: 'Cantidad' },
     wa_busca: {
       'Máquina para fabricar ladrillos': 'una máquina para fabricar ladrillos',
       'Comprar ladrillos': 'comprar ladrillos',
@@ -641,7 +641,9 @@
     var L = T.wa_labels;
     var parts = [T.wa_intro.replace('{nome}', lead.nome).replace('{pais}', lead.pais)];
     parts.push(L.busca + ': ' + (T.wa_busca[lead.buscando] || lead.buscando) + '.');
-    if (lead.modelo) parts.push(L.modelo + ': ' + lead.modelo + '.');
+    // O modelo não vai na mensagem: o lead escolhe a faixa de investimento depois e as
+    // duas podem não bater (ex.: Súper Económica III com a faixa da I). A Laila pediu
+    // só busca + investimento. O modelo continua indo para o CRM em OBSERVAÇÕES.
     // Na mensagem vai o rótulo (l), não o valor gravado no CRM (v).
     if (lead.invertir) parts.push(L.invertir + ': ' + rotulo(T.invertir, lead.invertir) + '.');
     if (lead.cantidad) parts.push(L.cantidad + ': ' + rotulo(T.cantidad, lead.cantidad) + '.');
